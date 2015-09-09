@@ -1,6 +1,5 @@
 - Prologue
     - [Introduction](/docs/{{version}}/orm/introduction)
-    - [Getting Started](/docs/{{version}}/orm/getting-started)
     - [Upgrade Guide](/docs/{{version}}/orm/upgrade)
     - [Contribution Guide](/docs/{{version}}/orm/contributions)
 - Setup
