@@ -1,4 +1,4 @@
-#Introduction
+#Getting Started
 
 Out of the box this package uses the default Laravel connection which is provided in `config/database.php`, which means that you are ready to start fetching and persisting.
 
