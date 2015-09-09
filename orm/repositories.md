@@ -83,7 +83,7 @@ Learning more about the Repository Pattern: http://shawnmc.cool/the-repository-p
 
 ### Pagination
 
-If you want to add easy pagination, you can add the `Brouwers\LaravelDoctrine\Pagination\Paginatable` trait to your repository. It offers two methods `paginateAll($perPage = 15, $pageName = 'page')` and `paginate($query, $perPage, $pageName = 'page', $fetchJoinCollection = true)`.
+If you want to add easy pagination, you can add the `LaravelDoctrine\ORM\Pagination\Paginatable` trait to your repository. It offers two methods `paginateAll($perPage = 15, $pageName = 'page')` and `paginate($query, $perPage, $pageName = 'page', $fetchJoinCollection = true)`.
 
 `paginateAll` will work out of the box, and will return all (if not softdelete enabled) entities inside Laravel's `LengthAwarePaginator`.
 
