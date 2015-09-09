@@ -69,7 +69,7 @@ In the example underneath, the Article entity is fetch from the entity manager t
 $article = EntityManager::find('App\Article', 1);
 $article->setTitle('Different title');
 
-$article2 = EntityManager::find('CMS\Article', 1);
+$article2 = EntityManager::find('App\Article', 1);
 
 if ($article === $article2) {
     echo "Yes we are the same!";
