@@ -79,10 +79,9 @@ class User implements BelongsToOrganisation
 }
 ```
 
-### User can belong to multiple organisation
+### User can belong to multiple organisations
 
 The User class should implement `LaravelDoctrine\ACL\Contracts\BelongsToOrganisations`. You can use the `@ACL\BelongsToOrganisations` annotation to define the relation.
-
 
 ```php
 <?php
