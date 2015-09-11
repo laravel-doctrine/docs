@@ -1,4 +1,4 @@
-# Installation
+# Installation in Laravel 5+
 
 Install this package with composer:
 
