@@ -45,6 +45,7 @@ class Team implements Organisation
         return $this->name;
     }
 }
+```
 
 ### User can belong to one organisation
 
