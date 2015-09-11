@@ -25,3 +25,5 @@ To publish the config use:
 ```php
 php artisan vendor:publish --tag="config"
 ```
+
+Available environment variables inside the config are: `APP_DEBUG`, `DOCTRINE_METADATA`, `DB_CONNECTION`, `DOCTRINE_PROXY_AUTOGENERATE`, `DOCTRINE_LOGGER` and `DOCTRINE_CACHE`

@@ -22,6 +22,8 @@ class_alias('LaravelDoctrine\ORM\Facades\Registry', 'Registry');
 class_alias('LaravelDoctrine\ORM\Facades\Doctrine', 'Doctrine');
 ```
 
+Uncomment `// Dotenv::load(__DIR__.'/../');`, so environment variables can be loaded
+
 Next, you will need to create the `config/database.php` and `config/cache.php` config files. 
 
 The database config file should look at least like this (assuming you are using MYSQL), but you can copy it from the Laravel source too:
@@ -115,3 +117,5 @@ If you are using apc, file, memcached or redis cache, the following config shoul
 ### Config
 
 If you want to overrule the Doctrine config. You will have to create a `config/doctrine.php` file and copy the contents from the package config.
+
+Available environment variables inside the config are: `APP_DEBUG`, `DOCTRINE_METADATA`, `DB_CONNECTION`, `DOCTRINE_PROXY_AUTOGENERATE`, `DOCTRINE_LOGGER` and `DOCTRINE_CACHE`
