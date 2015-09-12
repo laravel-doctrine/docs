@@ -1,0 +1,21 @@
+- Prologue
+    - [Introduction](/docs/{{version}}/extensions/introduction)
+    - [Upgrade Guide](/docs/{{version}}/extensions/upgrade)
+- Setup
+    - [Laravel 5](/docs/{{version}}/extensions/installation)
+    - [Lumen](/docs/{{version}}/extensions/lumen)
+- Behavioral extensions
+    - [Blameable](/docs/{{version}}/extensions/uploadable)
+    - [IpTraceable](/docs/{{version}}/extensions/uploadable)
+    - [Loggable](/docs/{{version}}/extensions/uploadable)
+    - [Sluggable](/docs/{{version}}/extensions/uploadable)
+    - [SoftDeletes](/docs/{{version}}/extensions/uploadable)
+    - [Sortable](/docs/{{version}}/extensions/uploadable)
+    - [Timestamps](/docs/{{version}}/extensions/uploadable)
+    - [Translatable](/docs/{{version}}/extensions/uploadable)
+    - [Tree](/docs/{{version}}/extensions/uploadable)
+    - [Uploadable](/docs/{{version}}/extensions/uploadable)
+- Query/Type extensions
+    - [Custom datetime functions](/docs/{{version}}/extensions/datetime)
+    - [Custom numeric functions](/docs/{{version}}/extensions/numeric)
+    - [Custom string functions](/docs/{{version}}/extensions/string)
