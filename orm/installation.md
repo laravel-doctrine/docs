@@ -16,7 +16,7 @@ Optionally you can register the EntityManager, Registry and/or Doctrine facade:
 
 ```php
 'EntityManager' => 'LaravelDoctrine\ORM\Facades\EntityManager',
-'Registry'      => 'LaravelDoctrine\ORM\Facades\Registry'
+'Registry'      => 'LaravelDoctrine\ORM\Facades\Registry',
 'Doctrine'      => 'LaravelDoctrine\ORM\Facades\Doctrine'
 ```
 
