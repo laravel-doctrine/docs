@@ -3,13 +3,13 @@
 Install this package with composer:
 
 ```
-composer require laravel-doctrine/acl
+composer require laravel-doctrine/migrations
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-'LaravelDoctrine\ACL\AclServiceProvider',
+'LaravelDoctrine\Migrations\MigrationsServiceProvider',
 ```
 
 To publish the config use:
