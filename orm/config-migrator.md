@@ -1,4 +1,4 @@
-#Configuration Migrator
+#Config File Migrator
 
 Laravel Doctrine provides a command to help migrate the configuration from another Laravel/Doctrine package to Laravel Doctrine's format.
 
