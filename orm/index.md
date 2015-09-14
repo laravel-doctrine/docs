@@ -16,6 +16,7 @@
     - [Connections](/docs/{{version}}/orm/connections)
     - [Meta Data](/docs/{{version}}/orm/meta-data-configuration)
     - [Caching](/docs/{{version}}/orm/caching)
+    - [Migrating Configuration From Other Packages](/docs/{{version}}/orm/config-migrator)
 - Services
     - [Authentication](/docs/{{version}}/orm/auth)
     - [Password resets](/docs/{{version}}/orm/passwords)
