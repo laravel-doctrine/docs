@@ -4,7 +4,7 @@ This package contains extensions for Doctrine2 that hook into the facilities of 
 or tools to use Doctrine2 more efficiently. This package contains mostly used behaviors which can be easily attached to your event system
 of Doctrine2 and handle the records being flushed in the behavioral way
 
-### Behavioral extensions
+### Behavioral extensions (Gedmo)
 
 * __Blameable__ - updates string or reference fields on create, update and even property change with a string or object (e.g. user).
 * __IpTraceable__ - inherited from Timestampable, sets IP address instead of timestamp
@@ -17,7 +17,7 @@ of Doctrine2 and handle the records being flushed in the behavioral way
 * __Tree__ - this extension automates the tree handling process and adds some tree specific functions on repository. (closure, nestedset or materialized path)
 * __Uploadable__ - provides file upload handling in entity fields
 
-### Query/Type extensions
+### Query/Type extensions (Berberlei)
 
 A set of extensions to Doctrine 2 that add support for additional query
 functions available in MySQL and Oracle.

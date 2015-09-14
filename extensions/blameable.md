@@ -9,3 +9,5 @@ Features:
 * Can react to specific property or relation changes to specific value
 * Can be nested with other behaviors
 * Annotation, Yaml and Xml mapping support for extensions
+
+For full documentation see [here.](https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/blameable.md)
