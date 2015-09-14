@@ -6,16 +6,31 @@ Install this package with composer:
 composer require laravel-doctrine/extensions
 ```
 
-After updating composer, add the ServiceProvider(s) to the providers array in `config/app.php`
+This package wraps extensions from [Gedmo](https://github.com/Atlantic18/DoctrineExtensions) and [Berberlei](https://github.com/beberlei/DoctrineExtensions).
 
-To include Gedmo extensions add:
+To include Gedmo extensions install them:
 
-```php
-'LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider.php',
 ```
 
-To include Beberlei extensions add:
+composer require "gedmo/doctrine-extensions=^2.4"
+```
+
+And then add the Gedmo (Behavioral) extensions service provider in `config/app.php`:
 
 ```php
-'LaravelDoctrine\Extensions\BeberleiExtensionsServiceProvider.php',
+LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider::class,
+```
+
+To include Beberlei (Query/Type) extensions install them:
+
+```
+
+composer require "beberlei/DoctrineExtensions=^1.0"
+```
+
+And then add the Berberlei extensions service provider in `config/app.php`:
+
+
+```php
+LaravelDoctrine\Extensions\BeberleiExtensionsServiceProvider::class,
 ```
