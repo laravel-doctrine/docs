@@ -4,3 +4,17 @@
 - Setup
     - [Laravel 5](/docs/{{version}}/migrations/installation)
     - [Lumen](/docs/{{version}}/migrations/lumen)
+    - [Configuration](/docs/{{version}}/migrations/configuration)
+- Console
+    - [Generate migration](/docs/{{version}}/migrations/generate)
+    - [From metadata to migration](/docs/{{version}}/migrations/diff)
+    - [Running migrations](/docs/{{version}}/migrations/migrate)
+    - [Execute a single migration](/docs/{{version}}/migrations/execute)
+    - [Rollback migration](/docs/{{version}}/migrations/rollback)
+    - [Get latest version](/docs/{{version}}/migrations/latest)
+    - [Add/delete version](/docs/{{version}}/migrations/version)
+    - [Check migration status](/docs/{{version}}/migrations/status)
+    - [Reset database](/docs/{{version}}/migrations/reset)
+    - [Re-run migrations](/docs/{{version}}/migrations/refresh)
+- Schema
+    - [Schema builder](/docs/{{version}}/migrations/builder)
