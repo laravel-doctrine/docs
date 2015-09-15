@@ -13,10 +13,11 @@
     - [Repositories](/docs/{{version}}/orm/repositories)
     - [Console](/docs/{{version}}/orm/console)
 - Configuration
-    - [Extending Configuration](/docs/{{version}}/orm/doctrine-manager)
-    - [Connections](/docs/{{version}}/orm/connections)
-    - [Meta Data](/docs/{{version}}/orm/meta-data-configuration)
-    - [Caching](/docs/{{version}}/orm/caching)
+    - [Configuration File Overview](/docs/{{version}}/orm/config-file)
+    - [Accessing Entity Managers](/docs/{{version}}/orm/doctrine-manager)
+    - [Extending Connections](/docs/{{version}}/orm/connections)
+    - [Extending MetaData](/docs/{{version}}/orm/meta-data-configuration)
+    - [Extending Caching](/docs/{{version}}/orm/caching)
 - Services
     - [Authentication](/docs/{{version}}/orm/auth)
     - [Password resets](/docs/{{version}}/orm/passwords)

@@ -1,6 +1,6 @@
 # Extending Configuration
 
-Laravel Doctrine uses `DoctrineManager` to provide an easy method of hooking into Doctrine internals for more advanced configuration than is possible with just a configuration file.
+Laravel Doctrine uses `DoctrineManager` to provide an easy method of hooking into the internals of an Entity Manager for more advanced configuration than is possible with just a configuration file.
 
 It provides access to three facets of Doctrine:
 
