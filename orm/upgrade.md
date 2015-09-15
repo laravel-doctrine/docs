@@ -24,4 +24,4 @@ If you have used [atrauzzi/laravel-doctrine](https://github.com/atrauzzi/laravel
 
 If you have used [mitchellvanw/laravel-doctrine](https://github.com/mitchellvanw/laravel-doctrine) in the past. You can easily update your config file using the following artisan command, a new `doctrine.php` config file will be generated based on your old config file:
 
-`php artisan doctrine:config:convert mitchellvanw [--source-file] [--dest-path]`
+`php artisan doctrine:config:convert mitchell [--source-file] [--dest-path]`
