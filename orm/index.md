@@ -13,6 +13,7 @@
     - [Repositories](/docs/{{version}}/orm/repositories)
     - [Console](/docs/{{version}}/orm/console)
 - Configuration
+    - [Extending Configuration](/docs/{{version}}/orm/doctrine-manager)
     - [Connections](/docs/{{version}}/orm/connections)
     - [Meta Data](/docs/{{version}}/orm/meta-data-configuration)
     - [Caching](/docs/{{version}}/orm/caching)
