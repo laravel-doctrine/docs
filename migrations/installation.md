@@ -9,7 +9,7 @@ composer require laravel-doctrine/migrations
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-'LaravelDoctrine\Migrations\MigrationsServiceProvider',
+LaravelDoctrine\Migrations\MigrationsServiceProvider::class,
 ```
 
 To publish the config use:

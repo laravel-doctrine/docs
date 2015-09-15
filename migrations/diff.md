@@ -7,7 +7,7 @@ $ php artisan doctrine:migrations:diff
 The command generates a migration by comparing project current database to mapping information. 
 Doctrine provides this command to generate migration classes by changing entity mappings instead of manually adding modifications to migration class.
 
-Lets add a new “name” column to User entity.
+Lets add id and name columns to a User entity.
 
 ```php
 <?php
