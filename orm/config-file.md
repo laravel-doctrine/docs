@@ -1,18 +1,15 @@
 # Configuration File Overview
 
-This page provides a quick overview of all of the options provided in `doctrine.php`, the configuration file for Laravel Doctrine.
-
-## Contents
-
 - [Sample Configuration](#sample-configuration)
 - [Entity Manager](#entity-manager)
-    - [Events and Filters](#events-and-filters)
 - [Extensions](#extensions)
 - [Custom Types](#custom-types)
 - [Custom Functions](#custom-functions)
 - [Logger](#logger)
 - [Cache](#cache)
 - [Gedmo Extensions](#gedmo)
+
+This page provides a quick overview of all of the options provided in `doctrine.php`, the configuration file for Laravel Doctrine.
 
 ### <a name="sample-configuration"></a> Sample Configuration
 
@@ -174,17 +171,21 @@ You must have **at least one** EM in order to use Laravel Doctrine.
 
 To use more than one EM simply create another entry in the `managers` array.
 
-* **EM Name** - In the sample below the EM we have configured is named `default`. This is the EM that Laravel Doctrine will attempt to use if no argument is provided to `ManagerRegistry`.
-* **dev** - Whether this EM is in development mode.
-* **meta** - The metadata driver to use. Built-in options are `annotations|yaml|xml|config|static_php`
-* **connection** - The connection drier to use. Built-in options are `mysql|oracle|pgsql|sqlite|sqlsrv`
-* **namespaces** - (Optional) If your entities are not located in the configured app namespace you can specify a different one here.
-* **paths** - An paths where the mapping configurations for your entities is located.
-* **repository** - (Optional) The default repository to use for this EM.
-* **proxies** - (Optional) Configuration settings for proxy classes for your entities.
- * **namespace** - Namespace (if different) specified for proxy classes
- * **path** - The path where proxy classes should be generated.
- * **auto_generate** - Should proxy classes be generated every time an EM is created? (Turn off production)
+| Property | Explanation |
+|:-----------|------------|
+| **EM Name** | In the sample below the EM we have configured is named `default`. This is the EM that Laravel Doctrine will attempt to use if no argument is provided to `ManagerRegistry`. |
+| **dev** | Whether this EM is in development mode. |
+| **meta** | The metadata driver to use. Built-in options are `annotations|yaml|xml|config|static_php` |
+| **connection** | The connection drier to use. Built-in options are `mysql|oracle|pgsql|sqlite|sqlsrv` |
+| **namespaces** | (Optional) If your entities are not located in the configured app namespace you can specify a different one here. |
+| **paths** | An paths where the mapping configurations for your entities is located. |
+| **repository** | (Optional) The default repository to use for this EM. |
+| **proxies.namespace** | Namespace (if different) specified for proxy classes |
+| **proxies.path** | The path where proxy classes should be generated. |
+| **proxies.auto_generate** | Should proxy classes be generated every time an EM is created? (Turn off production) |
+| **events.subscribers** |Subscribers should implement `Doctrine\Common\EventSubscriber` |
+| **events.listeners** | Key should be event type. E.g. `Doctrine\ORM\Events::onFlush`. Value should be the listener class |
+| **filters** | Filter system that allows the developer to add SQL to the conditional clauses of queries, regardless the place where the SQL is generated |
 
 
 ```php
@@ -217,7 +218,9 @@ Extensions can be enabled by adding them to this array. They provide additional 
 
 To use the extensions in this sample you must install the extensions package:
 
-`require laravel-doctrine/extensions`
+```
+require laravel-doctrine/extensions
+```
 
 and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)
 
@@ -248,9 +251,13 @@ These are classes that extend the functionality of Doctrine's DQL language. More
 
 To use the extensions in this sample you must install the extensions package:
 
-`require laravel-doctrine/extensions`
+```
+require laravel-doctrine/extensions
+```
 
 and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)
+
+If you include `BeberleiExtensionsServiceProvider` all custom functions will automatically be registered.
  
 To add a function simply add it to the correct list using this format:
 
@@ -281,29 +288,35 @@ To add a function simply add it to the correct list using this format:
 
 Enable logging of Laravel Doctrine and Doctrine by using the logger functionality.
 
-Available loggers:
-
-* `LaravelDoctrine\ORM\Loggers\LaravelDebugbarLogger`
-* `LaravelDoctrine\ORM\Loggers\ClockworkLogger`
-* `LaravelDoctrine\ORM\Loggers\FileLogger`
+|Available loggers|
+|--|
+| `LaravelDoctrine\ORM\Loggers\LaravelDebugbarLogger` |
+| `LaravelDoctrine\ORM\Loggers\ClockworkLogger` |
+| `LaravelDoctrine\ORM\Loggers\FileLogger` |
 
 ` 'logger' => env('DOCTRINE_LOGGER', false),`
 
 ### <a name="cache"></a> Cache
 
-Cache providers available:
+Cache will be used to cache metadata, results and queries.
 
-* `apc`
-* `array`
-* `file`
-* `memcached`
-* `redis`
+**Available cache providers:**
 
-Properties:
+* apc
+* array
+* file
+* memcached
+* redis
 
-* **default** - The default cache provider to use.
-* **namespace** - 
-* **second_level** - Should second_level cache be used?
+** Config settings:**
+
+|Property|Explanation |
+|--|--|
+| **cache.default** | The default cache provider to use. |
+| **cache.namespace** |  Will add namespace to the cache key. This is useful if you need extra control over handling key names collisions in your Cache solution.|
+| **cache.second_level** | The Second Level Cache is designed to reduce the amount of necessary database access. It sits between your application and the database to avoid the number of database hits as much as possible.
+When turned on, entities will be first searched in cache and if they are not found, a database query will be fired an then the entity result will be stored in a cache provider.
+ When used, READ_ONLY is mostly used. ReadOnly cache can do reads, inserts and deletes, cannot perform updates|
 
 ### Gedmo
 
@@ -311,6 +324,7 @@ This is an option for use with **Extensions**
 
 To use this option you must first install the extensions package:
 
-`require laravel-doctrine/extensions`
-
+```
+require laravel-doctrine/extensions
+```
 and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)

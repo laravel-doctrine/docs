@@ -22,14 +22,20 @@ This package supports using config meta data and can be enabled inside the confi
 
 ## Extending or Adding Metadata Drivers
 
-Drivers can be replaced or added using `MetaDataManager`
+Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\MetaData\MetaDataManager`. The callback should return an instance of `Doctrine\ORM\Configuration`
 
 ```php
-MetaDataManager::extend('myDriver' function() {
-    return [
-        'meta' => 'myDriver',
-        'connection' => 'sqlite',
-        'paths' => ...
-     ]
-});
+public function boot(MetaDataManager $metadata) {
+    $metadata->extend('myDriver' function(Application $app) {
+        $config = new Configuration;
+        $config->setMetadataCacheImpl($cache);
+        $driverImpl = $config->newDefaultAnnotationDriver('/path/to/lib/MyProject/Entities');
+        $config->setMetadataDriverImpl($driverImpl);
+        $config->setQueryCacheImpl($cache);
+        $config->setProxyDir('/path/to/myproject/lib/MyProject/Proxies');
+        $config->setProxyNamespace('MyProject\Proxies');
+        
+        return $config;
+    });
+}
 ```

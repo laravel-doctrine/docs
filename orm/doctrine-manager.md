@@ -12,12 +12,22 @@ These objects are accessed **per Entity Manager** using the name configured for 
 
 ## Using DoctrineManager
 
-Boilerplate example of `DoctrineManager`:
+Boilerplate example of `DoctrineManager` using facade `LaravelDoctrine\ORM\Facades\Doctrine`
 
 ```php
-DoctrineManager::extend('myManager', function($configuration, $connection, $eventManager){
+Doctrine::extend('myManager', function(Configuration $configuration, Connection $connection, EventManager $eventManager) {
     //modify and access settings as is needed
 });
+```
+
+Using dependency injection in `boot()` of a ServiceProvider
+
+```php
+public function boot(DoctrineManager $manager) {
+    $manager->extend('myManager', function(Configuration $configuration, Connection $connection, EventManager $eventManager) {
+        //modify and access settings as is needed
+    });
+}
 ```
 
 ## Implementing Your Own Extender
@@ -37,4 +47,8 @@ class MyDoctrineExtender implements DoctrineExtender
         //your extending code...
     }
 }
+```
+
+```php
+$manager->extend('myManager', MyDoctrineExtender::class);
 ```
