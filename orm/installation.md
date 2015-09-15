@@ -9,15 +9,15 @@ composer require laravel-doctrine/orm
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-'LaravelDoctrine\ORM\DoctrineServiceProvider',
+LaravelDoctrine\ORM\DoctrineServiceProvider::class,
 ```
 
 Optionally you can register the EntityManager, Registry and/or Doctrine facade:
 
 ```php
-'EntityManager' => 'LaravelDoctrine\ORM\Facades\EntityManager',
-'Registry'      => 'LaravelDoctrine\ORM\Facades\Registry',
-'Doctrine'      => 'LaravelDoctrine\ORM\Facades\Doctrine'
+'EntityManager' => LaravelDoctrine\ORM\Facades\EntityManager::class,
+'Registry'      => LaravelDoctrine\ORM\Facades\Registry::class,
+'Doctrine'      => LaravelDoctrine\ORM\Facades\Doctrine::class
 ```
 
 To publish the config use:
