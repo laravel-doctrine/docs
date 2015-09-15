@@ -14,7 +14,7 @@ This page provides a quick overview of all of the options provided in `doctrine.
 - [Cache](#cache)
 - [Gedmo Extensions](#gedmo)
 
-### Sample Configuration
+### <a name="sample-configuration"></a> Sample Configuration
 
 ```php
 <?php
@@ -166,7 +166,7 @@ return [
 ];
 ```
 
-### Entity Manager
+### <a name="entity-manager"></a> Entity Manager
 
 An **Entity Manager (EM)** contains all of the information Doctrine needs to understand, retrieve, and manipulate a set of entities (models). 
 
@@ -211,7 +211,7 @@ To use more than one EM simply create another entry in the `managers` array.
     ]
 ```
 
-### Extensions
+### <a name="extensions"></a> Extensions
 
 Extensions can be enabled by adding them to this array. They provide additional functionality Entities (Timestamps, Loggable, etc.)
 
@@ -236,13 +236,13 @@ and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/
 ],
 ```
 
-### Custom Types
+### <a name="custom-types"></a> Custom Types
 
 Custom types are classes that allow Doctrine to marshal data to/from the data source in a custom format. 
 
 To register a custom type simple add the class to this list. [For more information on custom types refer to the Doctrine documentation.](https://doctrine-orm.readthedocs.org/en/latest/cookbook/custom-mapping-types.html)
 
-### Custom Functions
+### <a name="custom-functions"></a> Custom Functions
 
 These are classes that extend the functionality of Doctrine's DQL language. More information on what functions are available [visit the repository.](https://github.com/beberlei/DoctrineExtensions) 
 
@@ -277,7 +277,7 @@ To add a function simply add it to the correct list using this format:
 'custom_string_functions'   => [],
 ```
 
-### Logger
+### <a name="logger"></a> Logger
 
 Enable logging of Laravel Doctrine and Doctrine by using the logger functionality.
 
@@ -289,7 +289,7 @@ Available loggers:
 
 ` 'logger' => env('DOCTRINE_LOGGER', false),`
 
-### Cache
+### <a name="cache"></a> Cache
 
 Cache providers available:
 
