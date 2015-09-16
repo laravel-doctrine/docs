@@ -8,6 +8,12 @@ IpTraceable behavior will automate the update of IP trace on your Entities or Do
 * Can be nested with other behaviors
 * Annotation, Yaml and Xml mapping support for extensions
 
+### Installation
+
+Add `LaravelDoctrine\Extensions\IpTraceable\IpTraceableExtension` to `doctrine.extensions` config.
+
+### Property annotation
+
 > @Gedmo\Mapping\Annotation\IpTraceable
 
 This annotation tells that this column is ipTraceable by default it updates this column on update. If column is not a string field it will trigger an exception.

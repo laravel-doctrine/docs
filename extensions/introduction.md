@@ -19,8 +19,7 @@ of Doctrine2 and handle the records being flushed in the behavioral way
 
 ### Query/Type extensions (Berberlei)
 
-A set of extensions to Doctrine 2 that add support for additional query
-functions available in MySQL and Oracle.
+A set of extensions to Doctrine 2 that add support for additional queryfunctions available in MySQL and Oracle.
 
 | DB | Functions |
 |--|---------|

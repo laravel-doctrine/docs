@@ -8,6 +8,12 @@ Blameable behavior will automate the update of username or user reference fields
 * Can be nested with other behaviors
 * Annotation, Yaml and Xml mapping support for extensions
 
+### Installation
+
+Add `LaravelDoctrine\Extensions\Blameable\BlameableExtension` to `doctrine.extensions` config.
+
+### Property annotation
+
 > @Gedmo\Mapping\Annotation\Blameable
 
 This annotation tells that this column is blameable
