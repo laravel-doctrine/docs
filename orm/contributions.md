@@ -3,7 +3,6 @@
 - [Bug Reports](#bug-reports)
 - [Core Development Discussion](#core-development-discussion)
 - [Which Branch?](#which-branch)
-- [Security Vulnerabilities](#security-vulnerabilities)
 - [Coding Style](#coding-style)
 
 <a name="bug-reports"></a>
@@ -46,3 +45,5 @@ It's always a good idea to back your Pull Request with tests, proving your imple
 ## Coding Style
 
 Laravel Doctrine follows the [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) coding standard and the [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) autoloading standard.
+
+A config file for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) is included. Every PR will be analyzed for PSR-2 and PSR-4 by [StyleCI](https://styleci.io/).

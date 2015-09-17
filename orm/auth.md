@@ -9,7 +9,8 @@ First you must implement the `LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
 **Note:** `Authenticatable` extends Laravel's authentication contract, `Illuminate\Contracts\Auth\Authenticatable`, so if you have already done this your entity does not require any changes.
 
 ```
-class User implements LaravelDoctrine\ORM\Contracts\Auth\Authenticatable {
+class User implements \LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
+{
 
     /**
      * @ORM\Id
@@ -18,23 +19,20 @@ class User implements LaravelDoctrine\ORM\Contracts\Auth\Authenticatable {
      */
     protected $id;
     
-    public function getAuthIdentifierName(){
+    public function getAuthIdentifierName()
+    {
         return 'id';
     }
 
     public function getAuthIdentifier()
     {
-        $name = $this->getAuthIdentifierName();
-
-        return $this->{$name};
+        return $this->id;
     }
     
     public function getPassword()
     {
         return $this->password;
     }
-
-    ...
 }
 ```
 
@@ -42,8 +40,8 @@ You may also use the provided trait `LaravelDoctrine\ORM\Auth\Authenticatable` i
 
 
 ```
-class User implements LaravelDoctrine\ORM\Contracts\Auth\Authenticatable {
-    
+class User implements \LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
+{
     use \LaravelDoctrine\ORM\Auth\Authenticatable
     
     /**
@@ -53,7 +51,8 @@ class User implements LaravelDoctrine\ORM\Contracts\Auth\Authenticatable {
      */
     protected $userId;
 
-    public function getAuthIdentifierName(){
+    public function getAuthIdentifierName()
+    {
         return 'userId';
     }
 }
