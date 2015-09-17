@@ -9,7 +9,7 @@ composer require laravel-doctrine/acl
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-'LaravelDoctrine\ACL\AclServiceProvider',
+LaravelDoctrine\ACL\AclServiceProvider::class,
 ```
 
 To publish the config use:
