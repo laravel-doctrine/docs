@@ -51,10 +51,10 @@ class User implements LaravelDoctrine\ORM\Contracts\Auth\Authenticatable {
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    protected $userId;
 
     public function getAuthIdentifierName(){
-        return 'id';
+        return 'userId';
     }
 }
 ```
@@ -89,7 +89,7 @@ return [
 	|
 	*/
 
-	'model' => 'app\Models\User',
+	'model' => 'App\User',
 
 
 	/*
