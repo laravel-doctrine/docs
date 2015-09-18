@@ -88,7 +88,7 @@ return [
 	|
 	*/
 
-	'model' => 'App\User',
+	'model' => App\User::class,
 
 
 	/*
