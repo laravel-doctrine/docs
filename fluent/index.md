@@ -1,0 +1,5 @@
+- Prologue
+    - [Introduction](/docs/{{version}}/orm/introduction)
+- Setup
+    - [Laravel 5](/docs/{{version}}/orm/installation)
+    - [Lumen](/docs/{{version}}/orm/lumen)
