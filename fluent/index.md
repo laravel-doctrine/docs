@@ -1,5 +1,21 @@
 - Prologue
     - [Introduction](/docs/{{version}}/orm/introduction)
 - Setup
-    - [Laravel 5](/docs/{{version}}/orm/installation)
-    - [Lumen](/docs/{{version}}/orm/lumen)
+    - [Laravel](/docs/{{version}}/orm/laravel-installation)
+    - [Standalone](/docs/{{version}}/orm/standalone-installation)
+- Quick start
+    - [Your first fluent mapping file](/docs/{{version}}/orm/first-mapping)    
+- Mappers
+    - [Entities](/docs/{{version}}/orm/entities)
+    - [Embeddables](/docs/{{version}}/orm/embeddables)
+    - [Mapped Super Class](/docs/{{version}}/orm/mappedsuperclass)
+- Mappings    
+    - [Columns](/docs/{{version}}/orm/columns)
+    - [Relations](/docs/{{version}}/orm/relations)  
+    - [Inheritance mapping](/docs/{{version}}/orm/inheritance)
+    - [Lifecycle callbacks](/docs/{{version}}/orm/lifecycle-callbacks)
+    - [Indexes](/docs/{{version}}/orm/inheritance)
+    - [Unique Constraints](/docs/{{version}}/orm/inheritance)
+    - [Inheritance mapping](/docs/{{version}}/orm/inheritance)
+- Macro's   
+    - [Using macro's](/docs/{{version}}/orm/macros)
