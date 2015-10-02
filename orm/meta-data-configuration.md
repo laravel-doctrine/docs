@@ -26,7 +26,7 @@ Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\MetaDa
 
 ```php
 public function boot(MetaDataManager $metadata) {
-    $metadata->extend('myDriver' function(Application $app) {
+    $metadata->extend('myDriver', function(Application $app) {
         $config = new Configuration;
         $config->setMetadataCacheImpl($cache);
         $driverImpl = $config->newDefaultAnnotationDriver('/path/to/lib/MyProject/Entities');
