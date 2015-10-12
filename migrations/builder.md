@@ -93,7 +93,7 @@ auto-incrementing methods (`bigIncrements` `increments` `smallIncrements`) and i
 create an auto-incrementing unsigned integer column of the specified size and set it as the primary key. 
 
 ```
-$table->bigIncrements(`id`);
+$table->bigIncrements('id');
 ```
 
 To specify a primary key which does not auto-increment, simply call the `primary` method. For example, consider a weak
@@ -101,7 +101,7 @@ entity that represents one of several images of a product and is identified uniq
 image ordinal:
 
 ```
-$table->primary([`product_id`, `position`]);
+$table->primary(['product_id', 'position']);
 ```
 
 To create an index with a unique constraint, call the `unique`
@@ -124,5 +124,5 @@ Command  | Description
 `$table->primary('id');  `  |  Add a primary key.
 `$table->primary(['last', 'first', 'zip']);  `  |  Add a composite keys.
 `$table->unique('email');  `  |  Add a unique (candidate) key.
-`$table->index('');  ` |  Add a basic index. 
+`$table->index('country');  ` |  Add a basic index. 
  
