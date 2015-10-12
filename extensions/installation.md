@@ -15,7 +15,7 @@ To include Gedmo extensions install them:
 composer require "gedmo/doctrine-extensions=^2.4"
 ```
 
-And then add the Gedmo (Behavioral) extensions service provider in `config/app.php`:
+If you are using an **annotation driver**, then add the Gedmo (Behavioral) extensions service provider in `config/app.php`:
 
 ```php
 LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider::class,
