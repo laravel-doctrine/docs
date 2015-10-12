@@ -88,4 +88,41 @@ To drop an existing table, you may use the `drop` or `dropIfExists` methods:
 
 ### Creating Indexes
 
-You can 
+The Schema Builder can create three types of indexes. To create a primary key, you can simply use any one of the 
+auto-incrementing methods (`bigIncrements` `increments` `smallIncrements`) and it will automatically
+create an auto-incrementing unsigned integer column of the specified size and set it as the primary key. 
+
+```
+$table->bigIncrements(`id`);
+```
+
+To specify a primary key which does not auto-increment, simply call the `primary` method. For example, consider a weak
+entity that represents one of several images of a product and is identified uniquely by the product_id foreign key and the
+image ordinal:
+
+```
+$table->primary([`product_id`, `position`]);
+```
+
+To create an index with a unique constraint, call the `unique`
+method:
+
+```
+$table->unique('email');
+```
+
+You can pass an array of column names to any of these methods:
+
+```
+$table->index(['inventory_id', 'image_number']);
+```
+
+#### Available Index Types
+
+Command  | Description
+------------- | -------------
+`$table->primary('id');  `  |  Add a primary key.
+`$table->primary(['last', 'first', 'zip']);  `  |  Add a composite keys.
+`$table->unique('email');  `  |  Add a unique (candidate) key.
+`$table->index('');  ` |  Add a basic index. 
+ 
