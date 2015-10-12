@@ -1,6 +1,6 @@
 # Schema Builder
 
-The Schema Builder is merely a decorator for the DBAL Schema Builder. It makes the process of building migrations similiar to Laravel.
+The Schema Builder is merely a decorator for the DBAL Schema Builder. It makes the process of building migrations similar to Laravel.
 
 ### Creating a new table
 
@@ -85,3 +85,7 @@ To drop an existing table, you may use the `drop` or `dropIfExists` methods:
 
 (new Builder($schema))->dropIfExists('users');
 ```
+
+### Creating Indexes
+
+You can 
