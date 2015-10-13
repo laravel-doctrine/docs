@@ -1,6 +1,6 @@
 # Schema Builder
 
-The Schema Builder is merely a decorator for the DBAL Schema Builder. It makes the process of building migrations similiar to Laravel.
+The Schema Builder is merely a decorator for the DBAL Schema Builder. It makes the process of building migrations similar to Laravel.
 
 ### Creating a new table
 
@@ -50,7 +50,6 @@ Command  | Description
 `$table->string('name', 100);`  |  VARCHAR equivalent with a length.
 `$table->text('description');`  |  TEXT equivalent for the database.
 `$table->time('sunrise');`  |  TIME equivalent for the database.
-`$table->tinyInteger('numbers');`  |  TINYINT equivalent for the database.
 `$table->timestamp('added_on');`  |  TIMESTAMP equivalent for the database.
 `$table->timestamps();`  |  Adds `created_at` and `updated_at` columns.
 
@@ -85,3 +84,44 @@ To drop an existing table, you may use the `drop` or `dropIfExists` methods:
 
 (new Builder($schema))->dropIfExists('users');
 ```
+
+### Creating Indexes
+
+The Schema Builder can create three types of indexes. To create a primary key, you can simply use any one of the 
+auto-incrementing methods (`bigIncrements` `increments` `smallIncrements`) and it will automatically
+create an auto-incrementing unsigned integer column of the specified size and set it as the primary key. 
+
+```
+$table->bigIncrements('id');
+```
+
+To specify a primary key which does not auto-increment, simply call the `primary` method. For example, consider a weak
+entity that represents one of several images of a product and is identified uniquely by the product_id foreign key and the
+image ordinal:
+
+```
+$table->primary(['product_id', 'position']);
+```
+
+To create an index with a unique constraint, call the `unique`
+method:
+
+```
+$table->unique('email');
+```
+
+You can pass an array of column names to any of these methods:
+
+```
+$table->index(['inventory_id', 'image_number']);
+```
+
+#### Available Index Types
+
+Command  | Description
+------------- | -------------
+`$table->primary('id');  `  |  Add a primary key.
+`$table->primary(['last', 'first', 'zip']);  `  |  Add a composite keys.
+`$table->unique('email');  `  |  Add a unique (candidate) key.
+`$table->index('country');  ` |  Add a basic index. 
+ 
