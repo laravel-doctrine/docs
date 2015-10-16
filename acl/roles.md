@@ -94,6 +94,20 @@ class User implements HasRolesContract
 The `LaravelDoctrine\ACL\Roles\HasRoles` trait provides methods to check if the User has a certain Role.
 
 ```php
-    $user->hasRole($role);
-    $user->hasRoleByName('Super Admin');
+$user->hasRole($role);
+$user->hasRoleByName('Super Admin');
+```
+
+An array of roles or role names can also checked for.
+
+```php
+$user->hasRole([$role1,$role2,$role3]);
+$user->hasRoleByName(['User','Admin','Manager']);
+```
+    
+Specifying `true` for the second argument will check that **all** roles are present.
+
+```php
+$user->hasRole([$role1,$role2,$role3], true); //User must have all roles
+$user->hasRoleByName(['User','Admin','Manager'], true);
 ```

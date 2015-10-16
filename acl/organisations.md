@@ -110,3 +110,25 @@ class User implements BelongsToOrganisations
     }
 }
 ```
+
+### Checking if a User has a certain Organisation
+
+The `LaravelDoctrine\ACL\Organisations\BelongsToOrganisation` trait provides methods to check if the User has a certain Organisation.
+
+```php
+$user->belongsToOrganisation($org);
+```
+
+An array of Organisations or Organisation names can also be checked for.
+
+```php
+$user->belongsToOrganisation([$org1,$org2,$org3]);
+$user->belongsToOrganisation(['Company 1','Company 2','Company 3']);
+```
+    
+Specifying `true` for the second argument will check that **all** roles are present.
+
+```php
+$user->belongsToOrganisation([$org1,$org2,$org3], true); //User must belong to all three organisations to return true
+$user->belongsToOrganisation(['Company 1','Company 2','Company 3'], true);
+```
