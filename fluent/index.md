@@ -1,21 +1,21 @@
 - Prologue
-    - [Introduction](/docs/{{version}}/orm/introduction)
+    - [Introduction](/docs/{{version}}/fluent/introduction)
 - Setup
-    - [Laravel](/docs/{{version}}/orm/laravel-installation)
-    - [Standalone](/docs/{{version}}/orm/standalone-installation)
+    - [Laravel](/docs/{{version}}/fluent/laravel-installation)
+    - [Standalone](/docs/{{version}}/fluent/standalone-installation)
 - Quick start
-    - [Your first fluent mapping file](/docs/{{version}}/orm/first-mapping)    
+    - [Your first fluent mapping file](/docs/{{version}}/fluent/first-mapping)
 - Mappers
-    - [Entities](/docs/{{version}}/orm/entities)
-    - [Embeddables](/docs/{{version}}/orm/embeddables)
-    - [Mapped Super Class](/docs/{{version}}/orm/mappedsuperclass)
+    - [Entities](/docs/{{version}}/fluent/entities)
+    - [Embeddables](/docs/{{version}}/fluent/embeddables)
+    - [Mapped Super Class](/docs/{{version}}/fluent/mappedsuperclass)
 - Mappings    
-    - [Columns](/docs/{{version}}/orm/columns)
-    - [Relations](/docs/{{version}}/orm/relations)  
-    - [Inheritance mapping](/docs/{{version}}/orm/inheritance)
-    - [Lifecycle callbacks](/docs/{{version}}/orm/lifecycle-callbacks)
-    - [Indexes](/docs/{{version}}/orm/inheritance)
-    - [Unique Constraints](/docs/{{version}}/orm/inheritance)
-    - [Inheritance mapping](/docs/{{version}}/orm/inheritance)
+    - [Columns](/docs/{{version}}/fluent/columns)
+    - [Relations](/docs/{{version}}/fluent/relations)
+    - [Inheritance mapping](/docs/{{version}}/fluent/inheritance)
+    - [Lifecycle callbacks](/docs/{{version}}/fluent/lifecycle-callbacks)
+    - [Indexes](/docs/{{version}}/fluent/inheritance)
+    - [Unique Constraints](/docs/{{version}}/fluent/inheritance)
+    - [Inheritance mapping](/docs/{{version}}/fluent/inheritance)
 - Macro's   
-    - [Using macro's](/docs/{{version}}/orm/macros)
+    - [Using macro's](/docs/{{version}}/fluent/macros)
