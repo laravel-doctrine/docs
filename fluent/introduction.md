@@ -14,9 +14,7 @@ Doctrine's mapping concepts in Laravel. The builder adds syntax sugar and implem
 might use in Laravel migrations.
 
 ```
-use LaravelDoctrine\Fluent\EntityMapping;
-
-class UserMapping extends EntityMapping
+class ScientistMapping extends EntityMapping
 {
     /**
      * Returns the fully qualified name of the class that this mapper maps.
@@ -25,7 +23,7 @@ class UserMapping extends EntityMapping
      */
     public function mapFor()
     {
-        return \App\User::class;
+        return Scientist::class;
     }
 
     /**
@@ -36,20 +34,9 @@ class UserMapping extends EntityMapping
     public function map(Fluent $builder)
     {
         $builder->increments('id');
-        $builder->embed(App\Email::class, 'email');
-        $builder->string('password')->length(60);
-        $builder->boolean('activated')->default(false);
-
-        // Laravel's grammar
-        $builder->belongsToMany(Role::class, 'roles')->owns('users');
-        $builder->hasOne(Profile::class, 'profile')->ownedBy('user');
-
-        // Doctrine's grammar
-        $builder->oneToMany(Address::class, 'addresses')->mappedBy('user');
-        $builder->manyToOne(Tenant::class, 'tenant')->inversedBy('users');
-
-        // Can be mixed up!
-        $builder->hasMany(Category::class, 'categories')->mappedBy('users');
+        $builder->embed(Name::class, 'name');
+ 
+        $builder->hasMany(Theory::class, 'theories')->ownedBy('scientist');
     }
 }
 ```
