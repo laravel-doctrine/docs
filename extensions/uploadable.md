@@ -62,6 +62,24 @@ class File
      */
     protected $path;
 }
+``` 
+### Usage
+In order to use this extension, you need to add the `LaravelDoctrine\Extensions\Uploadable\UploadableExtensionServiceProvider` into your `providers` array in the Laravel's `app.php` config. This service provider will register a singleton for the `UploadableListener` to be used in your app.
+
+To get the listener singleton you can then use its alias `LaravelDoctrine\Extensions\Uploadable\UploadableListener::class`.
+
+Example with the `app()` shortcut:
 ```
+$listener = app(UploadableListener::class);
+$listener->addEntityFileInto($entity, $fileInfo);
+```
+
+Another way would be to also register the `LaravelDoctrine\Extensions\Uploadable\UploadableFacade::class` facade in the `aliases` array in the Laravel's `app.php`. Then you can use the facade to call the listener's methods.
+
+Example with a facade (named `Uploadable`):
+```
+\Uploadable::addEntityFileInfo($entity, $fileInfo);
+```
+
 
 For full documentation see [here.](https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/uploadable.md)
