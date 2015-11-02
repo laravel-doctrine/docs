@@ -5,7 +5,7 @@ To set up Laravel Doctrine Extensions in Lumen, we need some additional steps.
 Install this package with composer:
 
 ```
-composer require laravel-doctrine/extensions
+composer require "laravel-doctrine/extensions:1.0.*"
 ```
 
 After updating composer, open `bootstrap/app.php` and register the Service Provider after `LaravelDoctrine\ORM\DoctrineServiceProvider::class`
