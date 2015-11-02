@@ -3,7 +3,7 @@
 Install this package with composer:
 
 ```
-composer require laravel-doctrine/extensions
+composer require "laravel-doctrine/extensions:1.0.*"
 ```
 
 This package wraps extensions from [Gedmo](https://github.com/Atlantic18/DoctrineExtensions) and [Berberlei](https://github.com/beberlei/DoctrineExtensions).
