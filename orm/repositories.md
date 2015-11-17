@@ -50,7 +50,7 @@ public function register()
     $this->app->bind(ArticleRepository::class, function($app) {
         return new DoctrineArticleRepository(
             $app['em'],
-            new ClassMetaData(Article::class)
+            $app['em']->getClassMetadata(Article::class)
         );
     });
 }
