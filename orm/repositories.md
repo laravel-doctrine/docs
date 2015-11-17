@@ -1,77 +1,216 @@
 # Repositories
 
-The Repository Design Pattern, defined by Eric Evans in his Domain Driven Design book, is one of the most useful and most widely applicable design patterns ever invented. It's a place to write collecting logic, build queries, ... Methods can be called `$repository->find(1)` or `$repository->findByName('Patrick')`.
+The Repository Design Pattern is one of the most useful and most widely applicable design patterns ever invented.
+It works as an abstraction for your persistence layer, giving you a place to write collecting logic, build queries, etc.
+
+Repositories are usually modeled as collections to abstract away persistence lingo, so it is very common to see methods
+like `find($id)`, `findByName("Patrick")`, as if your entities would be in a `Collection` object instead of a database.
+
+Doctrine comes with a generic `Doctrine\Common\Persistence\ObjectRepository` interface that lets you easily find one,
+many or all entities by ID, by an array of filters or by complex `Criteria`, and an implementation of it in
+`Doctrine\ORM\EntityRepository`.
+
+## Getting a repository instance
 
 The easiest way to get a repository is to let the EntityManager generate one for the Entity you want:
 
 ```php
-$repository = EntityManager::getRepository(Article::class);
+$repository = EntityManager::getRepository(Scientist::class);
 ```
 
-If you want to have more control over these repositories and inject them inside controllers, instead of always calling it on the EntityManager, you can create your own repository class.
-When we bind this concrete repository to an interface, it also makes that we can easily swap the data storage behind them. It also makes testing easier, because we can easily swap the concrete implementation for a mock.
+This will generate an instance of the `Doctrine\ORM\EntityRepository`, a generic implementation ready to be queried for
+ the class that was given to it.
 
-Given we have a ArticleRepository:
+## Injecting repositories
+
+You can inject generic repositories by using Laravel's [contextual binding](http://laravel.com/docs/5.1/container#contextual-binding).
+
+```php
+<?php
+namespace App\Research;
+
+use Doctrine\Common\Persistence\ObjectRepository;
+
+class Laboratory
+{
+    /**
+     * @var ObjectRepository
+     */
+    private $scientists;
+
+    public function __construct(ObjectRepository $scientists)
+    {
+        $this->scientists = $scientists;
+    }
+}
+
+// Then, in one of your ServiceProviders
+use App\Research\Laboratory;
+use App\Research\Scientist;
+use Doctrine\Common\Persistence\ObjectRepository;
+
+class AppServiceProvider
+{
+    public function register()
+    {
+        $this->app
+            ->when(Laboratory::class)
+            ->needs(ObjectRepository::class)
+            ->give(function(){
+                return EntityManager::getRepository(Scientist::class);
+            });
+    }
+}
+```
+
+## Extending repositories
+
+If you want to have more control over these repositories, instead of always calling it on the EntityManager, you can
+create your own repository class. When we bind this concrete repository to an interface, it also makes that we can
+easily swap the data storage behind them. It also makes testing easier, because we can easily swap the concrete
+implementation for a mock.
+
+Given we have a ScientistRepository:
 
 ```php
 <?php
 
-interface ArticleRepository
+interface ScientistRepository
 {
     public function find($id);
-    public function findByTitle($title);
+    public function findByName($name);
 }
 ```
 
-Now we can make a concrete Doctrine implementation:
+We should be able to make a concrete implementation of it with Doctrine:
+
+```php
+<?php
+
+class DoctrineScientistRepository implements ScientistRepository
+{
+    public function find($id)
+    {
+        // implement your find method
+    }
+
+    public function findByName($name)
+    {
+        // implement your find by title method
+    }
+}
+```
+
+Of course, now that we've built our own object, we are missing some useful features from Doctrine's generic repositories.
+Let's see two ways of reusing those generic objects inside our code.
+
+### Reusing repositories through inheritance
+
+Inheritance may be the simplest way of reusing repositories in Doctrine. We could change our implementation to something
+like this:
 
 ```php
 <?php
 
 use Doctrine\ORM\EntityRepository;
 
-class DoctrineArticleRepository extends EntityRepository implements ArticleRepository
+class DoctrineScientistRepository extends EntityRepository implements ScientistRepository
 {
-    // EntityRepository already offers methods like find and findBy{Field}
+    // public function find($id) already implemented in parent class!
+
+    public function findByName($name)
+    {
+        return $this->findBy(['name' => $name]);
+    }
+}
+
+// Then, in one of your ServiceProviders
+use App\Research\Scientist;
+
+class AppServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind(ScientistRepository::class, function($app) {
+            // This is what Doctrine's EntityRepository needs in its constructor.
+            return new DoctrineScientistRepository(
+                $app['em'],
+                $app['em']->getClassMetaData(Scientist::class)
+            );
+        });
+    }
 }
 ```
 
-Now we have to bind the concrete implementation to the interface. We can use Laravel's container for that.
+### Reusing repositories through composition
 
-In one of your ServiceProviders:
+Sometimes inheritance may not be your preferred way of reusing a library. If you'd rather decouple yourself from its
+implementation, if you need a different one or if you are writing a library and don't want to force inheritance on your
+consumers, you may choose to reuse Doctrine's generic repository implementation through *composition* instead.
 
 ```php
 <?php
 
-use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Common\Persistence\ObjectRepository;
 
-public function register()
+class DoctrineScientistRepository implements ScientistRepository
 {
-    $this->app->bind(ArticleRepository::class, function($app) {
-        return new DoctrineArticleRepository(
-            $app['em'],
-            $app['em']->getClassMetadata(Article::class)
-        );
-    });
+    private $genericRepository;
+    
+        public function __construct(ObjectRepository $genericRepository)
+        {
+            $this->genericRepository = $genericRepository;
+        }
+    
+        public function find($id)
+        {
+            return $this->genericRepository->find($id);
+        }
+    
+        public function findByName($name)
+        {
+            return $this->genericRepository->findBy(['name' => $name]);
+        }
+}
+
+// Then, in one of your ServiceProviders
+use App\Research\Scientist;
+
+class AppServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind(ScientistRepository::class, function(){
+            return new DoctrineScientistRepository(
+                EntityManager::getRepository(Scientist::class)
+            );
+        });
+    }
 }
 ```
 
-Inside your controller, you can now inject your repository interface:
+This method gives you total control over your Repository API. If, for example, you don't want to allow fetching all
+Scientist, you simply don't add that method to the interface / implementation, while inheriting the generic Doctrine
+repository would force the `findAll()` method on to your `ScientistRepository` API.
+
+## Using repositories
+
+Inside your controller (or any object that will be constructed by Laravel), you can now inject your repository interface:
 
 ```php
 
 class ExampleController extends Controller
 {
-    protected $repository;
+    private $scientists;
 
-    public function __construct(ArticleRepository $repository)
+    public function __construct(ScientistRepository $scientists)
     {
-        $this->repository = $repository;
+        $this->scientists = $scientists;
     }
 
     public function index()
     {
-        $articles = $this->repository->findAll();
+        $articles = $this->scientists->findAll();
     }
 
 }
@@ -90,7 +229,7 @@ If you want to add easy pagination, you can add the `LaravelDoctrine\ORM\Paginat
 If you want to add pagination to your custom queries, you will have to pass the query object through `paginate()`
 
 ```php
-public function paginateAllPublishedArticles($perPage = 15, $pageName = 'page')
+public function paginateAllPublishedScientists($perPage = 15, $pageName = 'page')
 {
     $builder = $this->createQueryBuilder('o');
     $builder->where('o.status = 1');
