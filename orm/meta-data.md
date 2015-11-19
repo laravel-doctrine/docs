@@ -110,7 +110,9 @@ return [
         'id'     => [
             'id' => [
                 'type'     => 'integer',
-                'strategy' => 'identity'
+                'generator' => [
+                    'strategy' => 'auto'
+                ]
             ],
         ],
         'fields' => [
