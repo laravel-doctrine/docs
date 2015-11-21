@@ -23,12 +23,12 @@ Doctrine entities don't extend any class, they are just regular PHP classes with
 Generally the properties are protected or private, so they only can be accessed through getters and setters.
 
 The domain/business logic is completely separated from the persistence logic. 
-This means we have to tell Doctrine how it should map the columns from the database to our Entity class. In this example we are using annotations. Other possiblities are yaml, xml or php array's.
+This means we have to tell Doctrine how it should map the columns from the database to our Entity class. In this example we are using annotations. Other possiblities are YAML, XML or PHP arrays.
 
 Entities are objects with identity. Their identity has a conceptual meaning inside your domain. In an application each article has a unique id. You can uniquely identify each article by that id.
 
 Relations are stored in `ArrayCollection`. It's advised to always set this default value in the constructor. `$this->theories = new ArrayCollection`. 
-You can easily add on new relations with `->add()`, remove them with `->removeElement()` or check if the relations is already defined with `->contains()`
+You can easily add on new relations with `->add()`, remove them with `->removeElement()` or check if the relation is already defined with `->contains()`
 
 The `Scientist` entity used in the example above looks like this when using annotations for the meta data.
 
