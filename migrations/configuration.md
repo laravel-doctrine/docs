@@ -18,7 +18,7 @@ __Default__: database/migrations
 
 This namespace will be used on all migrations
 
-__Default__: Databse\\Migrations
+__Default__: Database\\Migrations
 
 ## Migration Schema
 
