@@ -17,7 +17,7 @@ Optionally you can register the EntityManager, Registry and/or Doctrine facade:
 ```php
 'EntityManager' => LaravelDoctrine\ORM\Facades\EntityManager::class,
 'Registry'      => LaravelDoctrine\ORM\Facades\Registry::class,
-'Doctrine'      => LaravelDoctrine\ORM\Facades\Doctrine::class
+'Doctrine'      => LaravelDoctrine\ORM\Facades\Doctrine::class,
 ```
 
 To publish the config use:
