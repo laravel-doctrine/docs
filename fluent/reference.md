@@ -38,37 +38,37 @@ receive the same `LaravelDoctrine\Fluent\Builders\Field` instance as the only pa
 
 ### Type-based fields
 
-```
+```php
 string(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a string.
 
-```
+```php
 text(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as text.
 
-```
+```php
 integer(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as an integer.
 
-```
+```php
 smallInteger(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a small integer.
 
-```
+```php
 bigInteger(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a big integer.
 
-```
+```php
 unsignedInteger(string $name, callable $callback = null): Field
 ```
 
@@ -76,7 +76,7 @@ Defines a field with the given `$name` as an unsigned integer.
 
 This is an alias of `$builder->integer($name)->unsigned()`.
 
-```
+```php
 unsignedSmallInteger(string $name, callable $callback = null): Field
 ```
 
@@ -84,7 +84,7 @@ Defines a field with the given `$name` as an unsigned small integer.
 
 This is an alias of `$builder->smallInteger($name)->unsigned()`.
 
-```
+```php
 unsignedBigInteger(string $name, callable $callback = null): Field
 ```
 
@@ -92,73 +92,73 @@ Defines a field with the given `$name` as an unsigned big integer.
 
 This is an alias of `$builder->bigInteger($name)->unsigned()`.
 
-```
+```php
 float(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a floating point number.
 
-```
+```php
 decimal(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a decimal number.
 
-```
+```php
 boolean(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a boolean.
 
-```
+```php
 binary(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a binary.
 
-```
+```php
 jsonArray(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a JSON array.
 
-```
+```php
 guid(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a GUID.
 
-```
+```php
 blob(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a *b*inary *l*arge *ob*ject
 
-```
+```php
 object(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as an object.
 
-```
+```php
 setArray(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as an array.
 
-```
+```php
 array(string $name, callable $callback = null): Field
 ```
 
 This is an alias of `$builder->setArray($name)`;
 
-```
+```php
 simpleArray(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a simple array.
 
-```
+```php
 field(string $type, string $name, callable $callback = null): Field
 ```
 
@@ -167,67 +167,67 @@ You can find type constants in `Doctrine\DBAL\Types\Type`, or use your own.
 
 ### Date columns
 
-```
+```php
 date(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a date, using the native `DateTime` object.
 
-```
+```php
 dateTime(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a datetime, using the native `DateTime` object.
 
-```
+```php
 dateTimeTz(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a datetime with timezone, using the native `DateTime` object.
 
-```
+```php
 time(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a time, using the native `DateTime` object.
 
-```
+```php
 carbonDate(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a date, using the `Carbon\Carbon` object.
 
-```
+```php
 carbonDateTime(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a datetime, using the `Carbon\Carbon` object.
 
-```
+```php
 carbonDateTimeTz(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a datetime with timezone, using the `Carbon\Carbon` object.
 
-```
+```php
 carbonTime(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a time, using the `Carbon\Carbon` object.
 
-```
+```php
 zendDate(string $name, callable $callback = null): Field
 ```
 
 Defines a field with the given `$name` as a datetime, using the `Zend_Date` object.
 
-```
+```php
 timestamp(string $name, callable $callback = null): Field
 ```
 
 Alias of `$builder->carbonDateTime($name, $callback)`.
 
-```
+```php
 timestampTz(string $name, callable $callback = null): Field
 ```
 
@@ -237,25 +237,25 @@ Alias of `$builder->carbonDateTimeTz($name, $callback)`.
 
 Fluent provides helper methods for frequently used functionality.
 
-```
+```php
 rememberToken(string $name = 'rememberToken', callable $callback = null): Field
 ```
 
 Adds a `string` field compatible with Laravel's "remember me" functionality.
 
-```
+```php
 increments(string $name, callable $callback = null): Field
 ```
 
 Adds an unsigned integer with an auto-increment generated value.
 
-```
+```php
 smallIncrements(string $name, callable $callback = null): Field
 ```
 
 Adds a small unsigned integer with an auto-increment generated value.
 
-```
+```php
 bigIncrements(string $name, callable $callback = null): Field
 ```
 
@@ -266,60 +266,60 @@ Adds a big unsigned integer with an auto-increment generated value.
 All fields can be customized with the following methods, taken from [the Doctrine Annotations documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#column),
 as it implements the same features:
 
-```
+```php
 unique(boolean $flag = true): Field
 ```
 
 Boolean value to determine if the value of the column should be unique across all rows of the underlying entities
 table.
 
-```
+```php
 nullable(boolean $flag = true): Field
 ```
 
 Determines if NULL values are allowed for this column.
 
-```
+```php
 length(int $length): Field
 ```
 
 Used by the “string” type to determine its maximum length in the database. Doctrine does not validate the length of
 string values for you.
 
-```
+```php
 columnName(string $column): Field
 ```
 
 By default the property name is used for the database column name also, however the ‘name’ attribute allows you to
 determine the column name.
 
-```
+```php
 name(string $columnName): Field
 ```
 
 Alias of `$field->columnName($columnName)`
 
-```
+```php
 precision(int $precision): Field
 ```
 
 The precision for a decimal (exact numeric) column (applies only for decimal column), which is the maximum number
 of digits that are stored for the values.
 
-```
+```php
 scale(int $scale): Field
 ```
 
 The scale for a decimal (exact numeric) column (applies only for decimal column), which represents the number of
 digits to the right of the decimal point and must not be greater than precision.
 
-```
+```php
 default(string $default): Field
 ```
 
 The default value to set for the column if no value is supplied.
 
-```
+```php
 columnDefinition(string $def): Field
 ```
 
@@ -327,51 +327,51 @@ DDL SQL snippet that starts after the column name and specifies the complete (no
 This attribute allows to make use of advanced RMDBS features. However you should make careful use of this feature
 and the consequences. SchemaTool will not detect changes on the column correctly anymore if you use “columnDefinition”.
 
-```
+```php
 option($name, $value): Field
 ```
 
 Set custom options
 
-```
+```php
 unsigned(): Field
 ```
 
 Set the current field (must be numeric) to `unsigned`.
 
-```
+```php
 setDefault($default): Field
 ```
 
 Set the default value of the column. Although this may seem useful, default values can be more flexible by setting
 them on entities.
 
-```
+```php
 default($default): Field
 ```
 
 Alias of `setDefault($default)`.
 
-```
+```php
 fixed(boolean $fixed): Field
 ```
 
 Boolean value to determine if the specified length of a string column should be fixed or varying (applies only for
 string/binary column and might not be supported by all vendors).
 
-```
+```php
 comment(string $comment): Field
 ```
 
 The comment of the column in the schema (might not be supported by all vendors).
 
-```
+```php
 collation(string $collation): Field
 ```
 
 The collation of the column (only supported by Drizzle, Mysql, PostgreSQL>=9.1, Sqlite and SQLServer).
 
-```
+```php
 useForVersioning(): Field
 ```
 
@@ -403,7 +403,7 @@ $builder->integer('counter')->autoIncrement();
 
 The following methods can be found on the `GeneratedValue` object:
 
-```
+```php
 auto(string $name = null, int $initial = null, int $size = null): GeneratedValue
 ```
 
@@ -413,7 +413,7 @@ provides full portability. This is the default strategy.
 
 If parameters are given, they will be used to configure the `sequenceGenerator`.
 
-```
+```php
 sequence(string $name = null, int $initial = null, int $size = null): GeneratedValue
 ```
 
@@ -422,7 +422,7 @@ portability. Sequences are supported by Oracle, PostgreSql and SQL Anywhere.
 
 If parameters are given, they will be used to configure the `sequenceGenerator`.
 
-```
+```php
 identity(): GeneratedValue
 ```
 
@@ -431,7 +431,7 @@ This strategy does currently not provide full portability and is supported by th
 
 MySQL/SQLite/SQL Anywhere (AUTO_INCREMENT), MSSQL (IDENTITY) and PostgreSQL (SERIAL).
 
-```
+```php
 uuid(): GeneratedValue
 ```
 
@@ -442,7 +442,7 @@ This strategy provides full portability.
 field (PostgreSQL) or a `binary()->length(16)` field (MySQL), and create / receive the corresponding UUID on your
 Entity's `__construct()` method.
 
-```
+```php
 none(): GeneratedValue
 ```
 
@@ -451,7 +451,7 @@ place before a new entity is passed to EntityManager#persist.
 
 NONE is the same as leaving off the GeneratedValue entirely.
 
-```
+```php
 custom(string $generatorClass): GeneratedValue
 ```
 
@@ -469,7 +469,7 @@ plural depending on the relation type, so all `$field` parameters are optional.
 
 This driver also provides alias methods to have Laravel's syntax in Doctrine.
 
-```
+```php
 hasOne(string $entity, string $field = null, callable $callback = null): OneToOne
 ```
 
@@ -483,32 +483,32 @@ an `eager loading` fetch mode is configured.
 *IMPORTANT*: This is *NOT* an alias of `oneToOne($entity, $field, $callback)`. It is closer to a version of
 `oneToMany`, restricted to only one related entity on the inverse side by a `unique` constraint.
 
-```
+```php
 oneToOne(string $entity, string $field = null, callable $callback = null): OneToOne
 ```
 
 Define a `one-to-one` relation. If not defined, the current entity will be the owning side of the relation
 (that means it will be the one holding the foreign key.)
 
-```
+```php
 belongsTo(string $entity, string $field = null, callable $callback = null): ManyToOne
 ```
 
 This is an alias of `$builder->manyToOne($entity, $field, $callback)`
 
-```
+```php
 manyToOne(string $entity, string $field = null, callable $callback = null): ManyToOne
 ```
 
 Define the owning side of a `many-to-one` relation (that means it will be the one holding the foreign key.)
 
-```
+```php
 hasMany(string $entity, string $field = null, callable $callback = null): OneToMany
 ```
 
 This is an alias of `$builder->oneToMany($entity, $field, $callback)`.
 
-```
+```php
 oneToMany(string $entity, string $field = null, callable $callback = null): OneToMany
 ```
 
@@ -528,7 +528,7 @@ $builder->belongsToMany(Foo::class)
     ->joinColumn('foo_id', 'bar_id', true);
 ```
 
-```
+```php
 manyToMany(string $entity, $field, callable $callback = null): ManyToMany
 ```
 
@@ -540,13 +540,13 @@ In this type of relation, only the owner of the relation can have new related en
 through it. Be aware of this limitation and try your best to map only unidirectional `many-to-many`
 associations. This will reduce complexity and prevent hard to find bugs.
 
-```
+```php
 belongsToMany(string $entity, $field = null, callable $callback = null): ManyToMany
 ```
 
 This is an alias of `$builder->manyToMany()`.
 
-```
+```php
 addRelation(Relation $relation, callable $callback = null): Relation
 ```
 
@@ -598,37 +598,37 @@ relations.
 See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/working-with-associations.html#transitive-persistence-cascade-operations)
 for a complete usage guide.
 
-```
+```php
 cascadeAll(): Relation
 ```
 
 Configure the relation to cascade all operations.
 
-```
+```php
 cascadePersist(): Relation
 ```
 
 Configure the relation to cascade persist operations.
 
-```
+```php
 cascadeRemove(): Relation
 ```
 
 Configure the relation to cascade remove operations.
 
-```
+```php
 cascadeMerge(): Relation
 ```
 
 Configure the relation to cascade merge operations.
 
-```
+```php
 cascadeDetach(): Relation
 ```
 
 Configure the relation to cascade detach operations.
 
-```
+```php
 cascadeRefresh(): Relation
 ```
 
@@ -641,7 +641,7 @@ should be removed from the system. This can be acomplished by the `orphan remova
 
 See an example in [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/working-with-associations.html#orphan-removal).
 
-```
+```php
 orphanRemoval(): Relation
 ```
 
@@ -703,19 +703,19 @@ Doctrine supports 3 types of inheritance:
 
 For more information on usage and trade-offs, [see the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html).
 
-```
+```php
 singleTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
 ```
 
 Defines the current entity as the root of a single table inheritance tree.
 
-```
+```php
 joinedTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
 ```
 
 Defines the current entity as the root of a joined table inheritance tree.
 
-```
+```php
 inheritance($type, callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
 ```
 
@@ -730,79 +730,79 @@ Use `$builder->events()` to access the `LaravelDoctrine\Fluent\Builders\Lifecycl
 
 The following documentation is copied from [Doctrine's documentation on lifecycle events](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
 
-```
+```php
 preRemove(string $method): LifecycleEvents
 ```
 The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity
 is executed. It is not called for a DQL DELETE statement.
 
-```
+```php
 postRemove(string $method): LifecycleEvents
 ```
 The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database
 delete operations. It is not called for a DQL DELETE statement.
 
-```
+```php
 prePersist(string $method): LifecycleEvents
 ```
 The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity
 is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not
 trigger on future updates).
 
-```
+```php
 postPersist(string $method): LifecycleEvents
 ```
 The postPersist event occurs for an entity after the entity has been made persistent. It will be invoked after the
 database insert operations. Generated primary key values are available in the postPersist event.
 
-```
+```php
 preUpdate(string $method): LifecycleEvents
 ```
 The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE
 statement nor when the computed changeset is empty.
 
-```
+```php
 postUpdate(string $method): LifecycleEvents
 ```
 The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE
 statement.
 
-```
+```php
 postLoad(string $method): LifecycleEvents
 ```
 The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the
 database or after the refresh operation has been applied to it.
 
-```
+```php
 loadClassMetadata(string $method): LifecycleEvents
 ```
 The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source.
 This event is not a lifecycle callback.
 
-```
+```php
 onClassMetadataNotFound(string $method): LifecycleEvents
 ```
 Loading class metadata for a particular requested class name failed. Manipulating the given event args instance
 allows providing fallback metadata even when no actual metadata exists or could be found. This event is not a
 lifecycle callback.
 
-```
+```php
 preFlush(string $method): LifecycleEvents
 ```
 The preFlush event occurs at the very beginning of a flush operation. This event is not a lifecycle callback.
 
-```
+```php
 onFlush(string $method): LifecycleEvents
 ```
 The onFlush event occurs after the change-sets of all managed entities are computed. This event is not a lifecycle
 callback.
 
-```
+```php
 postFlush(string $method): LifecycleEvents
 ```
 The postFlush event occurs at the end of a flush operation. This event is not a lifecycle callback.
 
-```
+```php
 onClear(string $method): LifecycleEvents
 ```
 The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities
@@ -830,7 +830,7 @@ Indexes can be created on a field-by-field basis by calling the `index()` method
 
 Indexes that span more than one column have to be created separately from the field definition:
 
-```
+```php
 index(array|string $columns): \LaravelDoctrine\Fluent\Builders\Index
 ```
 
@@ -840,7 +840,7 @@ Unique constraints can be created on a field-by-field basis by calling the `uniq
 
 Unique constraints that span more than one column have to be created separately from the field definition:
 
-```
+```php
 unique(array|string $columns): \LaravelDoctrine\Fluent\Builders\UniqueConstraint
 ```
 
@@ -865,7 +865,7 @@ You can extend the `Builder` object with custom macros.
 
 To extend the builder, call the `extend` function while booting your application:
 
-```
+```php
 LaravelDoctrine\Fluent\Builders\Builder::extend('timestamps', function(Fluent $builder){
     // Use the builder to declare your custom macro
     $createdAt = $builder->carbonDateTime('createdAt');
@@ -890,7 +890,7 @@ public function map(Fluent $builder)
 You can access advanced configuration through the `$builder->entity()` method.
 The returned `LaravelDoctrine\Fluent\Builders\Entity` object will have the following methods:
 
-```
+```php
 setRepositoryClass(string $class): Entity
 ```
 
@@ -898,13 +898,13 @@ Set a custom repository class, to be used when called from `EntityManager::getRe
 
 If you are mapping custom repositories to a DI Container and resolving them by injection, then you probably don't need this.
 
-```
+```php
 readOnly(): Entity
 ```
 
 Mark this entity as *read only*. See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#entity).
 
-```
+```php
 cacheable($usage = ClassMetadataInfo::CACHE_USAGE_READ_ONLY, $region = null): Entity
 ```
 
