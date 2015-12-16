@@ -38,136 +38,198 @@ receive the same `LaravelDoctrine\Fluent\Builders\Field` instance as the only pa
 
 ### Type-based fields
 
-#### `string(string $name, callable $callback = null): Field`
+```
+string(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a string.
 
-#### `text(string $name, callable $callback = null): Field`
+```
+text(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as text.
 
-#### `integer(string $name, callable $callback = null): Field`
+```
+integer(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an integer.
 
-#### `smallInteger(string $name, callable $callback = null): Field`
+```
+smallInteger(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a small integer.
 
-#### `bigInteger(string $name, callable $callback = null): Field`
+```
+bigInteger(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a big integer.
 
-#### `unsignedInteger(string $name, callable $callback = null): Field`
+```
+unsignedInteger(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an unsigned integer.
 
 This is an alias of `$builder->integer($name)->unsigned()`.
 
-#### `unsignedSmallInteger(string $name, callable $callback = null): Field`
+```
+unsignedSmallInteger(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an unsigned small integer.
 
 This is an alias of `$builder->smallInteger($name)->unsigned()`.
 
-#### `unsignedBigInteger(string $name, callable $callback = null): Field`
+```
+unsignedBigInteger(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an unsigned big integer.
 
 This is an alias of `$builder->bigInteger($name)->unsigned()`.
 
-#### `float(string $name, callable $callback = null): Field`
+```
+float(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a floating point number.
 
-#### `decimal(string $name, callable $callback = null): Field`
+```
+decimal(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a decimal number.
 
-#### `boolean(string $name, callable $callback = null): Field`
+```
+boolean(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a boolean.
 
-#### `binary(string $name, callable $callback = null): Field`
+```
+binary(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a binary.
 
-#### `jsonArray(string $name, callable $callback = null): Field`
+```
+jsonArray(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a JSON array.
 
-#### `guid(string $name, callable $callback = null): Field`
+```
+guid(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a GUID.
 
-#### `blob(string $name, callable $callback = null): Field`
+```
+blob(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a *b*inary *l*arge *ob*ject
 
-#### `object(string $name, callable $callback = null): Field`
+```
+object(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an object.
 
-#### `setArray(string $name, callable $callback = null): Field`
+```
+setArray(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as an array.
 
-#### `array(string $name, callable $callback = null): Field`
+```
+array(string $name, callable $callback = null): Field
+```
 
 This is an alias of `$builder->setArray($name)`;
 
-#### `simpleArray(string $name, callable $callback = null): Field`
+```
+simpleArray(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a simple array.
 
-#### `field(string $type, string $name, callable $callback = null): Field`
+```
+field(string $type, string $name, callable $callback = null): Field
+```
 
 Generic method for adding any type of field that Doctrine supports.
 You can find type constants in `Doctrine\DBAL\Types\Type`, or use your own.
 
 ### Date columns
 
-#### `date(string $name, callable $callback = null): Field`
+```
+date(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a date, using the native `DateTime` object.
 
-#### `dateTime(string $name, callable $callback = null): Field`
+```
+dateTime(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a datetime, using the native `DateTime` object.
 
-#### `dateTimeTz(string $name, callable $callback = null): Field`
+```
+dateTimeTz(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a datetime with timezone, using the native `DateTime` object.
 
-#### `time(string $name, callable $callback = null): Field`
+```
+time(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a time, using the native `DateTime` object.
 
-#### `carbonDate(string $name, callable $callback = null): Field`
+```
+carbonDate(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a date, using the `Carbon\Carbon` object.
 
-#### `carbonDateTime(string $name, callable $callback = null): Field`
+```
+carbonDateTime(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a datetime, using the `Carbon\Carbon` object.
 
-#### `carbonDateTimeTz(string $name, callable $callback = null): Field`
+```
+carbonDateTimeTz(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a datetime with timezone, using the `Carbon\Carbon` object.
 
-#### `carbonTime(string $name, callable $callback = null): Field`
+```
+carbonTime(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a time, using the `Carbon\Carbon` object.
 
-#### `zendDate(string $name, callable $callback = null): Field`
+```
+zendDate(string $name, callable $callback = null): Field
+```
 
 Defines a field with the given `$name` as a datetime, using the `Zend_Date` object.
 
-#### `timestamp(string $name, callable $callback = null): Field`
+```
+timestamp(string $name, callable $callback = null): Field
+```
 
 Alias of `$builder->carbonDateTime($name, $callback)`.
 
-#### `timestampTz(string $name, callable $callback = null): Field`
+```
+timestampTz(string $name, callable $callback = null): Field
+```
 
 Alias of `$builder->carbonDateTimeTz($name, $callback)`.
 
@@ -175,19 +237,27 @@ Alias of `$builder->carbonDateTimeTz($name, $callback)`.
 
 Fluent provides helper methods for frequently used functionality.
 
-#### `rememberToken(string $name = 'rememberToken', callable $callback = null): Field`
+```
+rememberToken(string $name = 'rememberToken', callable $callback = null): Field
+```
 
 Adds a `string` field compatible with Laravel's "remember me" functionality.
 
-#### `increments(string $name, callable $callback = null): Field`
+```
+increments(string $name, callable $callback = null): Field
+```
 
 Adds an unsigned integer with an auto-increment generated value.
 
-#### `smallIncrements(string $name, callable $callback = null): Field`
+```
+smallIncrements(string $name, callable $callback = null): Field
+```
 
 Adds a small unsigned integer with an auto-increment generated value.
 
-#### `bigIncrements(string $name, callable $callback = null): Field`
+```
+bigIncrements(string $name, callable $callback = null): Field
+```
 
 Adds a big unsigned integer with an auto-increment generated value.
 
@@ -196,80 +266,114 @@ Adds a big unsigned integer with an auto-increment generated value.
 All fields can be customized with the following methods, taken from [the Doctrine Annotations documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#column),
 as it implements the same features:
 
-#### `unique(boolean $flag = true): Field`
+```
+unique(boolean $flag = true): Field
+```
 
 Boolean value to determine if the value of the column should be unique across all rows of the underlying entities
 table.
 
-#### `nullable(boolean $flag = true): Field`
+```
+nullable(boolean $flag = true): Field
+```
 
 Determines if NULL values are allowed for this column.
 
-#### `length(int $length): Field`
+```
+length(int $length): Field
+```
 
 Used by the “string” type to determine its maximum length in the database. Doctrine does not validate the length of
 string values for you.
 
-#### `columnName(string $column): Field`
+```
+columnName(string $column): Field
+```
 
 By default the property name is used for the database column name also, however the ‘name’ attribute allows you to
 determine the column name.
 
-#### `name(string $columnName): Field`
+```
+name(string $columnName): Field
+```
 
 Alias of `$field->columnName($columnName)`
 
-#### `precision(int $precision): Field`
+```
+precision(int $precision): Field
+```
 
 The precision for a decimal (exact numeric) column (applies only for decimal column), which is the maximum number
 of digits that are stored for the values.
 
-#### `scale(int $scale): Field`
+```
+scale(int $scale): Field
+```
 
 The scale for a decimal (exact numeric) column (applies only for decimal column), which represents the number of
 digits to the right of the decimal point and must not be greater than precision.
 
-#### `default(string $default): Field`
+```
+default(string $default): Field
+```
 
 The default value to set for the column if no value is supplied.
 
-#### `columnDefinition(string $def): Field`
+```
+columnDefinition(string $def): Field
+```
 
 DDL SQL snippet that starts after the column name and specifies the complete (non-portable!) column definition.
 This attribute allows to make use of advanced RMDBS features. However you should make careful use of this feature
 and the consequences. SchemaTool will not detect changes on the column correctly anymore if you use “columnDefinition”.
 
-#### `option($name, $value): Field`
+```
+option($name, $value): Field
+```
 
 Set custom options
 
-#### `unsigned(): Field`
+```
+unsigned(): Field
+```
 
 Set the current field (must be numeric) to `unsigned`.
 
-#### `setDefault($default): Field`
+```
+setDefault($default): Field
+```
 
 Set the default value of the column. Although this may seem useful, default values can be more flexible by setting
 them on entities.
 
-#### `default($default): Field`
+```
+default($default): Field
+```
 
 Alias of `setDefault($default)`.
 
-#### `fixed(boolean $fixed): Field`
+```
+fixed(boolean $fixed): Field
+```
 
 Boolean value to determine if the specified length of a string column should be fixed or varying (applies only for
 string/binary column and might not be supported by all vendors).
 
-#### `comment(string $comment): Field`
+```
+comment(string $comment): Field
+```
 
 The comment of the column in the schema (might not be supported by all vendors).
 
-#### `collation(string $collation): Field`
+```
+collation(string $collation): Field
+```
 
 The collation of the column (only supported by Drizzle, Mysql, PostgreSQL>=9.1, Sqlite and SQLServer).
 
-#### `useForVersioning(): Field`
+```
+useForVersioning(): Field
+```
 
 Defines the specified column as version attribute used in an optimistic locking scenario.
 It only works on integer or datetime columns. Combining `useForVersioning()` with `primary()` is not supported.
@@ -299,7 +403,9 @@ $builder->integer('counter')->autoIncrement();
 
 The following methods can be found on the `GeneratedValue` object:
 
-#### `auto(string $name = null, int $initial = null, int $size = null): GeneratedValue`
+```
+auto(string $name = null, int $initial = null, int $size = null): GeneratedValue
+```
 
 Tells Doctrine to pick the strategy that is preferred by the used database platform. The preferred strategies
 are IDENTITY for MySQL, SQLite, MsSQL and SQL Anywhere and SEQUENCE for Oracle and PostgreSQL. This strategy
@@ -307,21 +413,27 @@ provides full portability. This is the default strategy.
 
 If parameters are given, they will be used to configure the `sequenceGenerator`.
 
-#### `sequence(string $name = null, int $initial = null, int $size = null): GeneratedValue`
+```
+sequence(string $name = null, int $initial = null, int $size = null): GeneratedValue
+```
 
 Tells Doctrine to use a database sequence for ID generation. This strategy does currently not provide full
 portability. Sequences are supported by Oracle, PostgreSql and SQL Anywhere.
 
 If parameters are given, they will be used to configure the `sequenceGenerator`.
 
-#### `identity(): GeneratedValue`
+```
+identity(): GeneratedValue
+```
 
 Tells Doctrine to use special identity columns in the database that generate a value on insertion of a row.
 This strategy does currently not provide full portability and is supported by the following platforms:
 
 MySQL/SQLite/SQL Anywhere (AUTO_INCREMENT), MSSQL (IDENTITY) and PostgreSQL (SERIAL).
 
-#### `uuid(): GeneratedValue`
+```
+uuid(): GeneratedValue
+```
 
 Tells Doctrine to use the built-in Universally Unique Identifier generator.
 This strategy provides full portability.
@@ -330,14 +442,18 @@ This strategy provides full portability.
 field (PostgreSQL) or a `binary()->length(16)` field (MySQL), and create / receive the corresponding UUID on your
 Entity's `__construct()` method.
 
-#### `none(): GeneratedValue`
+```
+none(): GeneratedValue
+```
 
 Tells Doctrine that the identifiers are assigned (and thus generated) by your code. The assignment must take
 place before a new entity is passed to EntityManager#persist.
 
 NONE is the same as leaving off the GeneratedValue entirely.
 
-#### `custom(string $generatorClass): GeneratedValue`
+```
+custom(string $generatorClass): GeneratedValue
+```
 
 Tells Doctrine to use a custom Generator class to generate identifiers.
 The given class must extend `Doctrine\ORM\Id\AbstractIdGenerator`
@@ -353,7 +469,9 @@ plural depending on the relation type, so all `$field` parameters are optional.
 
 This driver also provides alias methods to have Laravel's syntax in Doctrine.
 
-### `hasOne(string $entity, string $field = null, callable $callback = null): OneToOne`
+```
+hasOne(string $entity, string $field = null, callable $callback = null): OneToOne
+```
 
 This method maps a `one-to-one` inverse side relation. This means that the current entity does not
 hold the foreign key, but is referenced by the given `$entity`. As the relation is a `one-to-one`, a
@@ -365,24 +483,34 @@ an `eager loading` fetch mode is configured.
 *IMPORTANT*: This is *NOT* an alias of `oneToOne($entity, $field, $callback)`. It is closer to a version of
 `oneToMany`, restricted to only one related entity on the inverse side by a `unique` constraint.
 
-### `oneToOne(string $entity, string $field = null, callable $callback = null): OneToOne`
+```
+oneToOne(string $entity, string $field = null, callable $callback = null): OneToOne
+```
 
 Define a `one-to-one` relation. If not defined, the current entity will be the owning side of the relation
 (that means it will be the one holding the foreign key.)
 
-### `belongsTo(string $entity, string $field = null, callable $callback = null): ManyToOne`
+```
+belongsTo(string $entity, string $field = null, callable $callback = null): ManyToOne
+```
 
 This is an alias of `$builder->manyToOne($entity, $field, $callback)`
 
-### `manyToOne(string $entity, string $field = null, callable $callback = null): ManyToOne`
+```
+manyToOne(string $entity, string $field = null, callable $callback = null): ManyToOne
+```
 
 Define the owning side of a `many-to-one` relation (that means it will be the one holding the foreign key.)
 
-### `hasMany(string $entity, string $field = null, callable $callback = null): OneToMany`
+```
+hasMany(string $entity, string $field = null, callable $callback = null): OneToMany
+```
 
 This is an alias of `$builder->oneToMany($entity, $field, $callback)`.
 
-### `oneToMany(string $entity, string $field = null, callable $callback = null): OneToMany`
+```
+oneToMany(string $entity, string $field = null, callable $callback = null): OneToMany
+```
 
 Define the inverse side of a `one-to-many` relation.
 
@@ -400,7 +528,9 @@ $builder->belongsToMany(Foo::class)
     ->joinColumn('foo_id', 'bar_id', true);
 ```
 
-### `manyToMany(string $entity, $field, callable $callback = null): ManyToMany`
+```
+manyToMany(string $entity, $field, callable $callback = null): ManyToMany
+```
 
 Define a `many-to-many` relation. If the other side of the relation is not defined, the
 current entity will be the owning side. If both sides are defined, one of them must be defined
@@ -410,11 +540,15 @@ In this type of relation, only the owner of the relation can have new related en
 through it. Be aware of this limitation and try your best to map only unidirectional `many-to-many`
 associations. This will reduce complexity and prevent hard to find bugs.
 
-### `belongsToMany(string $entity, $field = null, callable $callback = null): ManyToMany`
+```
+belongsToMany(string $entity, $field = null, callable $callback = null): ManyToMany
+```
 
 This is an alias of `$builder->manyToMany()`.
 
-### `addRelation(Relation $relation, callable $callback = null): Relation`
+```
+addRelation(Relation $relation, callable $callback = null): Relation
+```
 
 Generic method for adding any type of relation that Doctrine supports.
 
@@ -464,27 +598,39 @@ relations.
 See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/working-with-associations.html#transitive-persistence-cascade-operations)
 for a complete usage guide.
 
-#### `cascadeAll(): Relation`
+```
+cascadeAll(): Relation
+```
 
 Configure the relation to cascade all operations.
 
-#### `cascadePersist(): Relation`
+```
+cascadePersist(): Relation
+```
 
 Configure the relation to cascade persist operations.
 
-#### `cascadeRemove(): Relation`
+```
+cascadeRemove(): Relation
+```
 
 Configure the relation to cascade remove operations.
 
-#### `cascadeMerge(): Relation`
+```
+cascadeMerge(): Relation
+```
 
 Configure the relation to cascade merge operations.
 
-#### `cascadeDetach(): Relation`
+```
+cascadeDetach(): Relation
+```
 
 Configure the relation to cascade detach operations.
 
-#### `cascadeRefresh(): Relation`
+```
+cascadeRefresh(): Relation
+```
 
 Configure the relation to cascade refresh operations.
 
@@ -557,15 +703,21 @@ Doctrine supports 3 types of inheritance:
 
 For more information on usage and trade-offs, [see the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html).
 
-### `singleTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance`
+```
+singleTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
+```
 
 Defines the current entity as the root of a single table inheritance tree.
 
-### `joinedTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance`
+```
+joinedTableInheritance(callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
+```
 
 Defines the current entity as the root of a joined table inheritance tree.
 
-### `inheritance($type, callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance`
+```
+inheritance($type, callable $callback = null): LaravelDoctrine\Fluent\Builders\Inheritance
+```
 
 Generic method for adding any type of relation that Doctrine supports.
 
@@ -578,55 +730,81 @@ Use `$builder->events()` to access the `LaravelDoctrine\Fluent\Builders\Lifecycl
 
 The following documentation is copied from [Doctrine's documentation on lifecycle events](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
 
-### `preRemove(string $method): LifecycleEvents`
+```
+preRemove(string $method): LifecycleEvents
+```
 The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity
 is executed. It is not called for a DQL DELETE statement.
 
-### `postRemove(string $method): LifecycleEvents`
+```
+postRemove(string $method): LifecycleEvents
+```
 The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database
 delete operations. It is not called for a DQL DELETE statement.
 
-### `prePersist(string $method): LifecycleEvents`
+```
+prePersist(string $method): LifecycleEvents
+```
 The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity
 is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not
 trigger on future updates).
 
-### `postPersist(string $method): LifecycleEvents`
+```
+postPersist(string $method): LifecycleEvents
+```
 The postPersist event occurs for an entity after the entity has been made persistent. It will be invoked after the
 database insert operations. Generated primary key values are available in the postPersist event.
 
-### `preUpdate(string $method): LifecycleEvents`
+```
+preUpdate(string $method): LifecycleEvents
+```
 The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE
 statement nor when the computed changeset is empty.
 
-### `postUpdate(string $method): LifecycleEvents`
+```
+postUpdate(string $method): LifecycleEvents
+```
 The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE
 statement.
 
-### `postLoad(string $method): LifecycleEvents`
+```
+postLoad(string $method): LifecycleEvents
+```
 The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the
 database or after the refresh operation has been applied to it.
 
-### `loadClassMetadata(string $method): LifecycleEvents`
+```
+loadClassMetadata(string $method): LifecycleEvents
+```
 The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source.
 This event is not a lifecycle callback.
 
-### `onClassMetadataNotFound(string $method): LifecycleEvents`
+```
+onClassMetadataNotFound(string $method): LifecycleEvents
+```
 Loading class metadata for a particular requested class name failed. Manipulating the given event args instance
 allows providing fallback metadata even when no actual metadata exists or could be found. This event is not a
 lifecycle callback.
 
-### `preFlush(string $method): LifecycleEvents`
+```
+preFlush(string $method): LifecycleEvents
+```
 The preFlush event occurs at the very beginning of a flush operation. This event is not a lifecycle callback.
 
-### `onFlush(string $method): LifecycleEvents`
+```
+onFlush(string $method): LifecycleEvents
+```
 The onFlush event occurs after the change-sets of all managed entities are computed. This event is not a lifecycle
 callback.
 
-### `postFlush(string $method): LifecycleEvents`
+```
+postFlush(string $method): LifecycleEvents
+```
 The postFlush event occurs at the end of a flush operation. This event is not a lifecycle callback.
 
-### `onClear(string $method): LifecycleEvents`
+```
+onClear(string $method): LifecycleEvents
+```
 The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities
 have been removed from the unit of work. This event is not a lifecycle callback.
 
@@ -712,17 +890,23 @@ public function map(Fluent $builder)
 You can access advanced configuration through the `$builder->entity()` method.
 The returned `LaravelDoctrine\Fluent\Builders\Entity` object will have the following methods:
 
-### `setRepositoryClass(string $class): Entity`
+```
+setRepositoryClass(string $class): Entity
+```
 
 Set a custom repository class, to be used when called from `EntityManager::getRepository(string $entityName)`.
 
 If you are mapping custom repositories to a DI Container and resolving them by injection, then you probably don't need this.
 
-### `readOnly(): Entity`
+```
+readOnly(): Entity
+```
 
 Mark this entity as *read only*. See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#entity).
 
-### `cacheable($usage = ClassMetadataInfo::CACHE_USAGE_READ_ONLY, $region = null): Entity`
+```
+cacheable($usage = ClassMetadataInfo::CACHE_USAGE_READ_ONLY, $region = null): Entity
+```
 
 Mark this entity as cacheable, using the `Second Level Cache` functionality.
 
