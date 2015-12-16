@@ -15,7 +15,8 @@ This is the complete Fluent mapping reference.
 - [Extending with macros](#macros)
 - [Advanced Doctrine Entity configuration](#advanced)
 
-## Table <a name="table"></a>
+<a name="table"></a>
+## Table
 
 Each `Entity` defined in Doctrine will have a table associated with it. The name of the table is automatically
 generated for you through a `NamingStrategy`, but you can change it if you need to:
@@ -24,7 +25,8 @@ generated for you through a `NamingStrategy`, but you can change it if you need 
 table(string $name, callable $callback = null): LaravelDoctrine\Fluent\Builders\Table
 ```
 
-## Columns <a name="columns"></a>
+<a name="columns"></a>
+## Columns
 Columns are defined through their type and associated field. In Doctrine, we define fields in our
 entities and then create a database schema based on them, with a given `NamingStrategy`.
 
@@ -458,7 +460,8 @@ custom(string $generatorClass): GeneratedValue
 Tells Doctrine to use a custom Generator class to generate identifiers.
 The given class must extend `Doctrine\ORM\Id\AbstractIdGenerator`
 
-## Relations <a name="relations"></a>
+<a name="relations"></a>
+## Relations
 
 Relations are defined associating the current entity with another entity by its fully qualified
 class name. All relations will return a specific `LaravelDoctrine\Fluent\Relations\Relation` child object
@@ -648,7 +651,8 @@ orphanRemoval(): Relation
 *IMPORTANT*: Doctrine will *NOT* check if the removed entity is referred to from anywhere else. Only use orphan removal
 when the contained entity is solely referred to from the current entity.
 
-## Embeddables <a name="embeddables"></a>
+<a name="embeddables"></a>
+## Embeddables
 
 Embeddables have to be mapped independently of the entity that uses them. Each embeddable mapping class needs to extend
 `LaravelDoctrine\Fluent\EmbeddableMapping`.
@@ -663,7 +667,8 @@ Fields declared inside an embedded will have its columns prefixed by the entity'
 `NamingStrategy`. If you wish to change or remove it, you can do so by calling `prefix($prefix)` or `noPrefix()` on the
 `Embedded` object.
 
-## Inheritance mapping <a name="inheritance"></a>
+<a name="inheritance"></a>
+## Inheritance mapping
 
 A family of entities can be mapped to the database as an inheritance structure. Currently
 Doctrine supports 3 types of inheritance:
@@ -721,7 +726,8 @@ inheritance($type, callable $callback = null): LaravelDoctrine\Fluent\Builders\I
 
 Generic method for adding any type of relation that Doctrine supports.
 
-## Lifecycle callbacks <a name="lifecycle-callbacks"></a>
+<a name="lifecycle-callbacks"></a>
+## Lifecycle callbacks
 
 Doctrine allows configuring specific methods of an entity to be called as listeners of
 _lifecycle events_. This lets you easily hook into specific moments of the Doctrine entity lifecycle.
@@ -808,7 +814,8 @@ onClear(string $method): LifecycleEvents
 The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities
 have been removed from the unit of work. This event is not a lifecycle callback.
 
-## Primary keys <a name="primary-keys"></a>
+<a name="primary-keys"></a>
+## Primary keys
 
 Primary keys can be defined on a field-by-field basis by calling the `primary()` method on the `Field` object.
 Also, owning side of `*ToOne` relations can also be marked as primary with the same syntax.
@@ -824,7 +831,8 @@ primary(array|string $fields): LaravelDoctrine\Fluent\Builders\Primary
 (either auto-generated or application-based, such as UUIDs) and a unique constraint is enough to satisfy data restrictions
 while also maintaining flexibility and simplifying use. Take this into consideration when using composite primary keys.
 
-## Indexes <a name="indexes"></a>
+<a name="indexes"></a>
+## Indexes
 
 Indexes can be created on a field-by-field basis by calling the `index()` method on the `Field` object.
 
@@ -834,7 +842,8 @@ Indexes that span more than one column have to be created separately from the fi
 index(array|string $columns): \LaravelDoctrine\Fluent\Builders\Index
 ```
 
-## Unique Constraints <a name="uniques"></a>
+<a name="uniques"></a>
+## Unique Constraints
 
 Unique constraints can be created on a field-by-field basis by calling the `unique()` method on the `Field` object.
 
@@ -844,7 +853,8 @@ Unique constraints that span more than one column have to be created separately 
 unique(array|string $columns): \LaravelDoctrine\Fluent\Builders\UniqueConstraint
 ```
 
-## Mapping overrides <a name="overrides"></a>
+<a name="overrides"></a>
+## Mapping overrides
 
 Sometimes using external libraries can bring undesired mapping configurations into our entities. This is mostly the case
 when extending or using traits from external sources.
@@ -859,7 +869,8 @@ In this case, the `callable $callback` parameter is *required*, as it's your onl
 want to edit. This `callable` will receive an instance of either `Field` or a specific `Relation`, depending on what
 was already mapped in the given `$name`.
 
-## Extending with macros <a name="macros"></a>
+<a name="macros"></a>
+## Extending with macros
 
 You can extend the `Builder` object with custom macros.
 
@@ -885,7 +896,8 @@ public function map(Fluent $builder)
 }
 ```
 
-## Advanced Doctrine Entity configuration <a name="advanced"></a>
+<a name="advanced"></a>
+## Advanced Doctrine Entity configuration
 
 You can access advanced configuration through the `$builder->entity()` method.
 The returned `LaravelDoctrine\Fluent\Builders\Entity` object will have the following methods:
