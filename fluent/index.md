@@ -13,6 +13,8 @@
     - [Table](/docs/{{version}}/fluent/reference#table)
     - [Columns](/docs/{{version}}/fluent/reference#columns)
     - [Relations](/docs/{{version}}/fluent/reference#relations)
+      - [*-to-one relations](/docs/{{version}}/fluent/reference#relations-to-one)
+      - [*-to-many relations](/docs/{{version}}/fluent/reference#relations-to-many)
     - [Embeddables](/docs/{{version}}/fluent/reference#embeddables)
     - [Inheritance mapping](/docs/{{version}}/fluent/reference#inheritance)
     - [Lifecycle callbacks](/docs/{{version}}/fluent/reference#lifecycle-callbacks)
