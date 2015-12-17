@@ -629,19 +629,19 @@ The following documentation is copied from [Doctrine's documentation on lifecycl
 
 | Method                                                        | Description |
 |---------------------------------------------------------------|-------------|
-| `$builder->events()->preRemove(string $method)`               | The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity is executed. It is not called for a DQL DELETE statement.
-| `$builder->events()->postRemove(string $method)`              | The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database delete operations. It is not called for a DQL DELETE statement.
-| `$builder->events()->prePersist(string $method)`              | The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not trigger on future updates).
-| `$builder->events()->postPersist(string $method)`             | The postPersist event occurs for an entity after the entity has been made persistent. It will be invoked after the database insert operations. Generated primary key values are available in the postPersist event.
-| `$builder->events()->preUpdate(string $method)`               | The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE statement nor when the computed changeset is empty.
-| `$builder->events()->postUpdate(string $method)`              | The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE statement.
-| `$builder->events()->postLoad(string $method)`                | The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the database or after the refresh operation has been applied to it.
-| `$builder->events()->loadClassMetadata(string $method)`       | The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source. This event is not a lifecycle callback.
-| `$builder->events()->onClassMetadataNotFound(string $method)` | Loading class metadata for a particular requested class name failed. Manipulating the given event args instance allows providing fallback metadata even when no actual metadata exists or could be found. This event is not a lifecycle callback.
-| `$builder->events()->preFlush(string $method)`                | The preFlush event occurs at the very beginning of a flush operation. This event is not a lifecycle callback.
-| `$builder->events()->onFlush(string $method)`                 | The onFlush event occurs after the change-sets of all managed entities are computed. This event is not a lifecycle callback.
-| `$builder->events()->postFlush(string $method)`               | The postFlush event occurs at the end of a flush operation. This event is not a lifecycle callback.
-| `$builder->events()->onClear(string $method)`                 | The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities have been removed from the unit of work. This event is not a lifecycle callback.
+| `$builder->events()->preRemove(string $method)`               | The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity is executed. It is not called for a DQL DELETE statement. |
+| `$builder->events()->postRemove(string $method)`              | The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database delete operations. It is not called for a DQL DELETE statement. |
+| `$builder->events()->prePersist(string $method)`              | The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not trigger on future updates). |
+| `$builder->events()->postPersist(string $method)`             | The postPersist event occurs for an entity after the entity has been made persistent. It will be invoked after the database insert operations. Generated primary key values are available in the postPersist event. |
+| `$builder->events()->preUpdate(string $method)`               | The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE statement nor when the computed changeset is empty. |
+| `$builder->events()->postUpdate(string $method)`              | The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE statement. |
+| `$builder->events()->postLoad(string $method)`                | The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the database or after the refresh operation has been applied to it. |
+| `$builder->events()->loadClassMetadata(string $method)`       | The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source. This event is not a lifecycle callback. |
+| `$builder->events()->onClassMetadataNotFound(string $method)` | Loading class metadata for a particular requested class name failed. Manipulating the given event args instance allows providing fallback metadata even when no actual metadata exists or could be found. This event is not a lifecycle callback. |
+| `$builder->events()->preFlush(string $method)`                | The preFlush event occurs at the very beginning of a flush operation. This event is not a lifecycle callback. |
+| `$builder->events()->onFlush(string $method)`                 | The onFlush event occurs after the change-sets of all managed entities are computed. This event is not a lifecycle callback. |
+| `$builder->events()->postFlush(string $method)`               | The postFlush event occurs at the end of a flush operation. This event is not a lifecycle callback. |
+| `$builder->events()->onClear(string $method)`                 | The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities have been removed from the unit of work. This event is not a lifecycle callback. |
 
 <a name="primary-keys"></a>
 ## Primary keys
