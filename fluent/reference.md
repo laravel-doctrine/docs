@@ -627,6 +627,8 @@ Use `$builder->events()` to access the `LaravelDoctrine\Fluent\Builders\Lifecycl
 
 The following documentation is copied from [Doctrine's documentation on lifecycle events](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
 
+| Method                                                        | Description |
+|---------------------------------------------------------------|-------------|
 | `$builder->events()->preRemove(string $method)`               | The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity is executed. It is not called for a DQL DELETE statement.
 | `$builder->events()->postRemove(string $method)`              | The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database delete operations. It is not called for a DQL DELETE statement.
 | `$builder->events()->prePersist(string $method)`              | The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not trigger on future updates).
