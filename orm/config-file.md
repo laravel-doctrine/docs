@@ -2,6 +2,7 @@
 
 - [Sample Configuration](#sample-configuration)
 - [Entity Manager](#entity-manager)
+    - [Namespace Alias](#entity-manager-namespace-alias)
 - [Extensions](#extensions)
 - [Custom Types](#custom-types)
 - [Custom Functions](#custom-functions)
@@ -210,6 +211,35 @@ To use more than one EM simply create another entry in the `managers` array.
             'filters' => ...
         ]
     ]
+```
+
+#### <a name="entity-manager-namespace-alias"></a> Namespace Alias
+
+To use namespace alias, you just have to specify then as key of each namespace.
+
+Example:
+```php
+    'managers'                  => [
+        'default' => [
+            ...
+            'connection' => env('DB_CONNECTION', 'mysql'),
+            'namespaces' => [
+                'Foo' => 'App\Model\Foo\Entities',
+                'Bar' => 'App\Model\Bar\Entities',
+            ],
+            'paths'      => [
+                base_path('app')
+            ],
+            ...
+        ]
+    ]
+```
+
+Whenever you need to specify entities in these namespaces, you can simple use the alias as follow:
+```php
+    SELECT f FROM Foo:SomeEntity
+    or
+    \EntityManager::getRepository('Bar:SomeEntity');
 ```
 
 ### <a name="extensions"></a> Extensions
