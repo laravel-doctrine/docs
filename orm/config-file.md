@@ -2,7 +2,10 @@
 
 - [Sample Configuration](#sample-configuration)
 - [Entity Manager](#entity-manager)
+<<<<<<< HEAD
     - [Namespace Alias](#entity-manager-namespace-alias)
+=======
+>>>>>>> adb96a9... - Added documentation about Mapping types
     - [Mapping Types](#entity-manager-mapping-types)
 - [Extensions](#extensions)
 - [Custom Types](#custom-types)
@@ -235,6 +238,7 @@ To use more than one EM simply create another entry in the `managers` array.
     ]
 ```
 
+<<<<<<< HEAD
 #### <a name="entity-manager-namespace-alias"></a> Namespace Alias
 
 To use namespace alias, you just have to specify then as key of each namespace.
@@ -264,6 +268,8 @@ Whenever you need to specify entities in these namespaces, you can simple use th
     \EntityManager::getRepository('Bar:SomeEntity');
 ```
 
+=======
+>>>>>>> adb96a9... - Added documentation about Mapping types
 #### <a name="entity-manager-mapping-types"></a> Mapping Types
 
 To convert the underlying database type to a doctrine when performing schema operations, the type has to be registered with the database platform:
