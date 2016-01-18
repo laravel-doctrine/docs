@@ -3,6 +3,7 @@
 - [Sample Configuration](#sample-configuration)
 - [Entity Manager](#entity-manager)
     - [Namespace Alias](#entity-manager-namespace-alias)
+    - [Mapping Types](#entity-manager-mapping-types)
 - [Extensions](#extensions)
 - [Custom Types](#custom-types)
 - [Custom Functions](#custom-functions)
@@ -67,7 +68,18 @@ return [
                 'listeners'   => [],
                 'subscribers' => []
             ],
-            'filters'    => []
+            'filters'    => [],
+            /*
+            |--------------------------------------------------------------------------
+            | Doctrine mapping types
+            |--------------------------------------------------------------------------
+            | 
+            | Link a Database Type to a Local Doctrine Type
+            |--------------------------------------------------------------------------
+            */
+            'mapping_types'              => [
+                //'enum' => 'string'
+            ]
         ]
     ],
     /*
@@ -208,7 +220,16 @@ To use more than one EM simply create another entry in the `managers` array.
                 'auto_generate' => env('DOCTRINE_PROXY_AUTOGENERATE', false)
             ],
             'events' => ...
-            'filters' => ...
+            'filters' => ...,
+            /*
+            |--------------------------------------------------------------------------
+            | Doctrine mapping types
+            |--------------------------------------------------------------------------
+            | 
+            | Link a Database Type to a Local Doctrine Type
+            |--------------------------------------------------------------------------
+            */
+            'mapping_types'              => ...
         ]
     ]
 ```
@@ -240,6 +261,31 @@ Whenever you need to specify entities in these namespaces, you can simple use th
     SELECT f FROM Foo:SomeEntity
     or
     \EntityManager::getRepository('Bar:SomeEntity');
+```
+
+#### <a name="entity-manager-mapping-types"></a> Mapping Types
+
+To convert the underlying database type to a doctrine when performing schema operations, the type has to be registered with the database platform:
+
+In the following example we will convert a database type called enum to string.
+```php
+    'managers'                  => [
+        'default' => [
+            ...
+            'filters' => ...,
+            /*
+            |--------------------------------------------------------------------------
+            | Doctrine mapping types
+            |--------------------------------------------------------------------------
+            | 
+            | Link a Database Type to a Local Doctrine Type
+            |--------------------------------------------------------------------------
+            */
+            'mapping_types'              => [
+                'enum' => 'string'
+            ]
+        ]
+    ]
 ```
 
 ### <a name="extensions"></a> Extensions
