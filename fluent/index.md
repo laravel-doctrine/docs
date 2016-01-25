@@ -8,7 +8,7 @@
 - Mappers
     - [Entities](/docs/{{version}}/fluent/entities)
     - [Embeddables](/docs/{{version}}/fluent/embeddables)
-    - [Mapped Super Class](/docs/{{version}}/fluent/mappedsuperclass)
+    - [Mapped Super Class](/docs/{{version}}/fluent/mapped-superclass)
 - [Mapping Reference](/docs/{{version}}/fluent/reference)
     - [Table](/docs/{{version}}/fluent/reference#table)
     - [Columns](/docs/{{version}}/fluent/reference#columns)
