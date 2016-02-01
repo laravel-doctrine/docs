@@ -65,6 +65,21 @@ $user->hasPermissionTo('create.posts');
 $role->hasPermissionTo('create.posts');
 ```
 
+An array of permissions can also checked for.
+
+```php
+$user->hasPermissionTo(['create.posts','create.page']);
+$role->hasPermissionTo(['create.posts','create.page']);
+```
+    
+Specifying `true` for the second argument will check that **all** permissions are present.
+
+```php
+$user->hasPermissionTo(['create.posts','create.page'], true); //all permissions are required to return true
+$role->hasPermissionTo(['create.posts','create.page'], true);
+```
+
+
 #### Using the Gate helper
 
 All permissions are automatically defined inside Laravel's Gate helper.

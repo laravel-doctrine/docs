@@ -98,8 +98,19 @@ More information about XML mappings: http://doctrine-orm.readthedocs.org/en/late
 
 ### Config files
 
-This package adds another option, which leverages Laravel's config system. You could for example create a `config/mappings.php` file and set that inside the `mapping_file` setting.
-The array structure is almost identical to the YAML one:
+This package adds another option, which leverages Laravel's config system. In addition to setting `meta`, this also requires setting `mapping_file`. You could for example create a `config/mappings.php` file to provide mapping information. Here is an example of setting the `meta` and `mapping_file` config properties inside of `config/doctrine.php` to use config file-based metadata:
+
+```php
+<?php
+
+return [
+    'managers' => [
+        'default' => [
+            'meta'       => env('DOCTRINE_METADATA', 'config'),
+            'mapping_file' => 'mappings',
+```
+
+The array structure in `config/mappings.php` is almost identical to the YAML one:
 
 ```php
 <?php
@@ -110,7 +121,9 @@ return [
         'id'     => [
             'id' => [
                 'type'     => 'integer',
-                'strategy' => 'identity'
+                'generator' => [
+                    'strategy' => 'auto'
+                ]
             ],
         ],
         'fields' => [

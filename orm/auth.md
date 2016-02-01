@@ -42,7 +42,7 @@ You may also use the provided trait `LaravelDoctrine\ORM\Auth\Authenticatable` i
 ```
 class User implements \LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
 {
-    use \LaravelDoctrine\ORM\Auth\Authenticatable
+    use \LaravelDoctrine\ORM\Auth\Authenticatable;
     
     /**
      * @ORM\Id
@@ -88,7 +88,7 @@ return [
 	|
 	*/
 
-	'model' => 'App\User',
+	'model' => App\User::class,
 
 
 	/*

@@ -1,9 +1,14 @@
 # Installation in Laravel 5+
 
+ Laravel  | Laravel Doctrine
+:---------|:----------
+ 5.1.*    | 1.0.*
+ 5.2.*    | 1.1.*
+
 Install this package with composer:
 
 ```
-composer require laravel-doctrine/orm
+composer require "laravel-doctrine/orm:1.1.*"
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
