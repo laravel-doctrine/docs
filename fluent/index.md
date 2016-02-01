@@ -1,0 +1,24 @@
+- Prologue
+    - [Introduction](/docs/{{version}}/fluent/introduction)
+- Setup
+    - [Laravel](/docs/{{version}}/fluent/laravel-installation)
+    - [Standalone](/docs/{{version}}/fluent/standalone-installation)
+- Quick start
+    - [Your first fluent mapping file](/docs/{{version}}/fluent/first-mapping)
+- Mappers
+    - [Entities](/docs/{{version}}/fluent/entities)
+    - [Embeddables](/docs/{{version}}/fluent/embeddables)
+    - [Mapped Super Class](/docs/{{version}}/fluent/mapped-superclass)
+- [Mapping Reference](/docs/{{version}}/fluent/reference)
+    - [Table](/docs/{{version}}/fluent/reference#table)
+    - [Columns](/docs/{{version}}/fluent/reference#columns)
+    - [Relations](/docs/{{version}}/fluent/reference#relations)
+    - [Embeddables](/docs/{{version}}/fluent/reference#embeddables)
+    - [Inheritance mapping](/docs/{{version}}/fluent/reference#inheritance)
+    - [Lifecycle callbacks](/docs/{{version}}/fluent/reference#lifecycle-callbacks)
+    - [Primary keys](/docs/{{version}}/fluent/reference#primary-keys)
+    - [Indexes](/docs/{{version}}/fluent/reference#indexes)
+    - [Unique Constraints](/docs/{{version}}/fluent/reference#uniques)
+    - [Mapping overrides](/docs/{{version}}/fluent/reference#overrides)
+    - [Extending with macros](/docs/{{version}}/fluent/reference#macros)
+    - [Advanced Doctrine Entity configuration](/docs/{{version}}/fluent/reference#advanced)

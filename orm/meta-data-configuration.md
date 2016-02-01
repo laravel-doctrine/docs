@@ -29,13 +29,12 @@ This package supports static PHP (`static_php`) meta data and can be enabled ins
 This package supports using config meta data and can be enabled inside the config.
 
 ## Extending or Adding Metadata Drivers
-
 Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\MetaData\MetaDataManager`. The callback should return an instance of `\Doctrine\Common\Persistence\Mapping\Driver\MappingDriver`
 
 ```php
 public function boot(MetaDataManager $metadata) {
     $metadata->extend('myDriver', function(Application $app) {
-        return XmlDriver();
+        return FluentDriver();
     });
 }
 ```
