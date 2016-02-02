@@ -30,7 +30,7 @@ class Scientist
 {
     public function __construct(string $email)
     {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
             throw new \InvalidArgumentException("Given email [$email] is not valid.");
         }
         
@@ -50,7 +50,7 @@ class Email
     
     public function __construct(string $address)
     {
-        if (filter_var($address, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($address, FILTER_VALIDATE_EMAIL) === false) {
             throw new \InvalidArgumentException("Given email [$address] is not valid.");
         }
 
