@@ -135,7 +135,7 @@ class Theory
     protected $title;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Theory", inversedBy="theories")
+    * @ORM\ManyToOne(targetEntity="Scientist", inversedBy="theories")
     * @var Scientist
     */
     protected $scientist;
