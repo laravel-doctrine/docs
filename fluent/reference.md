@@ -724,10 +724,10 @@ was already mapped in the given `$name`.
 
 You can extend the `Builder` object with custom macros.
 
-To extend the builder, call the `extend` function while booting your application:
+To extend the builder, call the `macro` function while booting your application:
 
 ```php
-LaravelDoctrine\Fluent\Builders\Builder::extend('timestamps', function(Fluent $builder){
+LaravelDoctrine\Fluent\Builders\Builder::macro('timestamps', function(Fluent $builder){
     // Use the builder to declare your custom macro
     $createdAt = $builder->carbonDateTime('createdAt');
     $updatedAt = $builder->carbonDateTime('updatedAt');
