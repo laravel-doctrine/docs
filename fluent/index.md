@@ -22,3 +22,16 @@
     - [Mapping overrides](/docs/{{version}}/fluent/reference#overrides)
     - [Extending with macros](/docs/{{version}}/fluent/reference#macros)
     - [Advanced Doctrine Entity configuration](/docs/{{version}}/fluent/reference#advanced)
+
+- [Extensions](/docs/{{version}}/fluent/extensions)
+    - [Blameable](/docs/{{version}}/fluent/extensions#blameable)
+    - [IpTraceable](/docs/{{version}}/fluent/extensions#iptraceable)
+    - [Loggable](/docs/{{version}}/fluent/extensions#loggable)
+    - [Sluggable](/docs/{{version}}/fluent/extensions#sluggable)
+    - [SoftDeletes](/docs/{{version}}/fluent/extensions#softdeletes)
+    - [Sortable](/docs/{{version}}/fluent/extensions#sortable)
+    - [Timestamps](/docs/{{version}}/fluent/extensions#timestamps)
+    - [Translatable](/docs/{{version}}/fluent/extensions#translatable)
+    - [Tree](/docs/{{version}}/fluent/extensions#tree)
+    - [Uploadable](/docs/{{version}}/fluent/extensions#uploadable)
+ 
