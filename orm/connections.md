@@ -16,7 +16,7 @@ The additional settings per connection are applied by default.
 You can replace existing connection drivers or add custom drivers using the `LaravelDoctrine\ORM\Configuration\Connections\ConnectionManager`. Should return an array of parameters.
 
 ```php
-public function boot(ConnectionManager $cache) {
+public function boot(ConnectionManager $connections) {
     $connections->extend('myDriver', function(Application $app) {
         return [
             'driver' => 'driver',
