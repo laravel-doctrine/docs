@@ -193,6 +193,7 @@ To use more than one EM simply create another entry in the `managers` array.
 | **namespaces** | (Optional) If your entities are not located in the configured app namespace you can specify a different one here. |
 | **paths** | An paths where the mapping configurations for your entities is located. |
 | **repository** | (Optional) The default repository to use for this EM. |
+| **decorator** | (Optional) Your custom EM decorator to overwrite the default EM. |
 | **proxies.namespace** | Namespace (if different) specified for proxy classes |
 | **proxies.path** | The path where proxy classes should be generated. |
 | **proxies.auto_generate** | Should proxy classes be generated every time an EM is created? (Turn off production) |
