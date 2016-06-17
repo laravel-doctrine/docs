@@ -35,6 +35,32 @@ generated for you through a `NamingStrategy`, but you can change it if you need 
 $builder->table('science_guys');
 ```
 
+### Table customizations
+
+Every table method returns an instance of `LaravelDoctrine\Fluent\Builders\Table`, if the user
+prefers, an optional callback can be used instead of the _fluent_ interface. This callback will
+receive the same `LaravelDoctrine\Fluent\Builders\Table` instance as the only parameter, so both options are identical.
+
+```php
+// Using the returned object
+$builder->table('science_guys')->charset('utf8mb4');
+
+// Using the callback
+$builder->table('science_guys', function(Table $table){
+    $table->charset('utf8mb4');
+});
+```
+
+Most fields can be customized with the following methods, when it makes sense.
+
+| `Table` method | Description |
+|----------------|-------------|
+| `$table->schema('schema_name')`             | Set the name of the tables schema. |
+| `$table->charset('utf8mb4')`				  | Set a custom charset on the table. |
+| `$table->collate('utf8mb4_latin_ci')`       | Set a custom collation on the table. |
+| `$table->options(['charset' => 'utf8mb4'])` | Set an array of custom options for the table. **The given array replaces all the configured options for the table.** |
+| `$table->option('charset', 'utf8mb4')`      | Add one option to the options configured for the table. Input should be `$table->option('key', 'value')`. |
+
 <a name="columns"></a>
 ## Columns
 Columns are defined through their type and associated field. In Doctrine, we define fields in our
