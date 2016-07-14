@@ -25,10 +25,10 @@ return [
     |--------------------------------------------------------------------------
     */
     'custom_types'              => [
-        'CarbonDate'       => DoctrineExtensions\Types\CarbonDateType::class,
-        'CarbonDateTime'   => DoctrineExtensions\Types\CarbonDateTimeType::class,
-        'CarbonDateTimeTz' => DoctrineExtensions\Types\CarbonDateTimeTzType::class,
-        'CarbonTime'       => DoctrineExtensions\Types\CarbonTimeType::class
+        'carbondate'       => DoctrineExtensions\Types\CarbonDateType::class,
+        'carbondatetime'   => DoctrineExtensions\Types\CarbonDateTimeType::class,
+        'carbondatetimetz' => DoctrineExtensions\Types\CarbonDateTimeTzType::class,
+        'carbontime'       => DoctrineExtensions\Types\CarbonTimeType::class
     ],
     /*
     |--------------------------------------------------------------------------
