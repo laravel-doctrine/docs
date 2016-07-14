@@ -4,12 +4,10 @@
 
 ### Implementing Authenticatable
  
-First you must implement the `LaravelDoctrine\ORM\Contracts\Auth\Authenticatable` contract on the entity you wish to use with authentication.
-
-**Note:** `Authenticatable` extends Laravel's authentication contract, `Illuminate\Contracts\Auth\Authenticatable`, so if you have already done this your entity does not require any changes.
+First you must extend Laravel's authentication contract on the entity you wish to use with authentication.
 
 ```
-class User implements \LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
+class User implements \Illuminate\Contracts\Auth\Authenticatable
 {
 
     /**
@@ -40,7 +38,7 @@ You may also use the provided trait `LaravelDoctrine\ORM\Auth\Authenticatable` i
 
 
 ```
-class User implements \LaravelDoctrine\ORM\Contracts\Auth\Authenticatable
+class User implements \Illuminate\Contracts\Auth\Authenticatable
 {
     use \LaravelDoctrine\ORM\Auth\Authenticatable;
     
