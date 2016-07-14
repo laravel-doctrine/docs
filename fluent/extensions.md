@@ -177,5 +177,5 @@ $builder->uploadable()
 $builder->string('filePath')->asFilePath();        
 $builder->string('fileName')->asFileName();     
 $builder->string('fileSize')->asFileSize();     
-$builder->string('mineType')->asMimeType();     
+$builder->string('mineType')->asFileMimeType();     
 ```
