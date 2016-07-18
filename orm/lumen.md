@@ -77,7 +77,7 @@ return [
 If you are using apc, file, memcached or redis cache, the following config should be added:
 
 ```php
- <php
+<?php
  
  return [
     /*
