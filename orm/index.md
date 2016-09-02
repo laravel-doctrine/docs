@@ -23,3 +23,4 @@
     - [Password resets](/docs/{{version}}/orm/passwords)
     - [Testing](/docs/{{version}}/orm/testing)
     - [Validation](/docs/{{version}}/orm/validation)
+    - [Notifications](/docs/{{version}}/orm/notifications)
