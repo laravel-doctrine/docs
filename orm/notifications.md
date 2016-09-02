@@ -61,7 +61,7 @@ The Doctrine channel is available as: `LaravelDoctrine\ORM\Notifications\Doctrin
 When adding this channel you need to provide a `toEntity` method. This method should return a new instance of your `Notification` class. 
 You can use the fluent methods like described above.
 
-```
+```php
 <?php
 
 namespace App\Notifications;
@@ -113,7 +113,7 @@ By default the Doctrine Channel will find the first suitable EM to persist the N
 
 If you want more control over it, you can specify it inside your notifiable entity (most likely your User entity). Usage of the `LaravelDoctrine\ORM\Notifications\Notifiable` is required.
 
-```
+```php
 public function routeNotificationForDoctrine()
 {
     return 'custom';
