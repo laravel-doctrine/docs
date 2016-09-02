@@ -93,3 +93,29 @@ class InvoicePaid extends \Illuminate\Notifications\Notification
     }
 }
 ```
+
+### Notifiable Entity
+
+Your Notifiable entity should use the `LaravelDoctrine\ORM\Notifications\Notifiable` trait. 
+
+Now you will be able to do `$user->notify(new InvoicePaid);`
+
+```php
+class User 
+{
+    use LaravelDoctrine\ORM\Notifications\Notifiable;
+}
+```
+
+### Custom Entity Manager
+
+By default the Doctrine Channel will find the first suitable EM to persist the Notification by using the `ManagerRegistry`. 
+
+If you want more control over it, you can specify it inside your notifiable entity (most likely your User entity). Usage of the `LaravelDoctrine\ORM\Notifications\Notifiable` is required.
+
+```
+public function routeNotificationForDoctrine()
+{
+    return 'custom';
+}
+```
