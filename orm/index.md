@@ -21,4 +21,5 @@
 - Services
     - [Authentication](/docs/{{version}}/orm/auth)
     - [Password resets](/docs/{{version}}/orm/passwords)
+    - [Testing](/docs/{{version}}/orm/testing)
     - [Validation](/docs/{{version}}/orm/validation)
