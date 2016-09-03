@@ -42,7 +42,7 @@ class Post implements Searchable
 }
 ```
 
-> Please not that currently it is required to have the primary key (`id`) of the entity marked as public to make it possible to index and search them.
+> Please note that currently it is required to have the primary key (`id`) of the entity marked as public to make it possible to index and search them.
 
 ### Batch indexing
 
