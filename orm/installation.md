@@ -5,11 +5,12 @@
  5.1.*    | 1.0.*
  5.2.*    | 1.1.*
  5.3.*    | 1.2.*
+ 5.4.*    | 1.3.*
 
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/orm:1.2.*"
+composer require "laravel-doctrine/orm:1.3.*"
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
