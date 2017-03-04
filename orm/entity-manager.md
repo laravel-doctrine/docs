@@ -61,7 +61,7 @@ class ExampleController extends Controller
 
 Entities are objects with identity. Their identity has a conceptual meaning inside your domain. In a CMS application each article has a unique id. You can uniquely identify each article by that id.
 
-In the example underneath, the Article entity is fetch from the entity manager twice, but was modified after the first find. Doctrine2 keeps track of all those changes. This pattern is called `Identity Map pattern`, which means that Doctrine keeps a map of each entity and ids that have been retrieved per request and keeps return the same instances on every find.
+In the example underneath, the Article entity is fetched from the entity manager twice, but was modified after the first find. Doctrine2 keeps track of all those changes. This pattern is called `Identity Map pattern`, which means that Doctrine keeps a map of each entity and ids that have been retrieved per request and keeps return the same instances on every find.
 
 `$article` and `$article1` will be identical, eventhough we haven't persisted the changes to `$article` to the database yet.
 
