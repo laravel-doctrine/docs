@@ -3,7 +3,7 @@
 ## Configuration
 
 ### Implementing Authenticatable
- 
+
 First you must extend Laravel's authentication contract on the entity you wish to use with authentication.
 
 ```
@@ -16,7 +16,7 @@ class User implements \Illuminate\Contracts\Auth\Authenticatable
      * @ORM\Column(type="integer")
      */
     protected $id;
-    
+
     public function getAuthIdentifierName()
     {
         return 'id';
@@ -26,7 +26,7 @@ class User implements \Illuminate\Contracts\Auth\Authenticatable
     {
         return $this->id;
     }
-    
+
     public function getPassword()
     {
         return $this->password;
@@ -41,7 +41,7 @@ You may also use the provided trait `LaravelDoctrine\ORM\Auth\Authenticatable` i
 class User implements \Illuminate\Contracts\Auth\Authenticatable
 {
     use \LaravelDoctrine\ORM\Auth\Authenticatable;
-    
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -111,6 +111,52 @@ return [
 	],
 
 ];
+```
+
+## Password hashing
+Password hashing must be handled by your application; Laravel's authentication
+and LaravelDoctrine will treat passwords as nothing more than strings. We would
+recommend decoupling the operation of hashing of the password (and any other
+procedures, like validating strength) from its storage by implementing a separate
+service to handle any password-related actions.
+
+```
+use \Illuminate\Contracts\Hashing\Hasher;
+
+class PasswordService
+{
+    private $hasher;
+    private $passwordStrengthValidator;
+
+    /**
+     * @param Hasher $hasher
+     * @param MyPasswordStrengthValidator $passwordStrength
+     */
+    public function __construct(
+      Hasher $hasher,
+      MyPasswordStrengthValidator $passwordStrength
+    ) {
+      $this->hasher = $hasher;
+      $this->passwordStrengthValidator = $passwordStrength
+    }
+
+    /**
+     * Validate and change the given users password
+     *
+     * @param User $user
+     * @param string $password
+     * @throws PasswordTooWeakException
+     * @return void
+     */
+    public function changePassword(User $user, $password)
+    {
+        if ($this->passwordStrengthValidator->isStrongEnough($password)) {
+            $user->setPassword($this->hasher->make($password))
+        } else {
+            throw new PasswordTooWeakException();
+        }
+    }
+}
 ```
 
 ## Using Authentication
