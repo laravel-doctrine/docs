@@ -2,7 +2,7 @@
 
 A set of extensions to Doctrine 2 that add support for additional queryfunctions available in MySQL and Oracle.
 
-When `LaravelDoctrine\Extensions\BeberleiExtensionsServiceProvider::class` the following functions will be automatically registerd.
+When `LaravelDoctrine\Extensions\BeberleiExtensionsServiceProvider::class` the following functions will be automatically registered.
 
 | DB | Functions |
 |--|---------|
