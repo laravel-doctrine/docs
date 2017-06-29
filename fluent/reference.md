@@ -620,17 +620,13 @@ $builder->joinedTableInheritance()->column('type');
 <a name="lifecycle-callbacks"></a>
 ## Lifecycle events and callbacks
 
-Doctrine allows hooking into its lifecycle via [Events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html). Fluent provides a bridge to hook into this event system as well.
+Doctrine allows hooking into its lifecycle via [Events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html). Fluent provides a bridge for these hooks.
 
-There are two sets of events that can be used by two different types of listeners:
+A list of all Lifecycle Events can be found in the [doctrine documentation](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
 
-**Lifecycle Event** Listeners and Subscribers are classes with specific callback methods that receives some kind of EventArgs instance.
+### Listening to Lifecycle Events
 
-**Lifecycle Callbacks** are methods on the entity classes that are called when the event is triggered.
-
-### Lifecycle Events
-
-_Lifecycle Events_ can be triggered by any Events available in the Doctrine lifecycle. 
+Listener classes can hook into **any** Lifecycle Events. The event dispatcher will call the given callback method with a specific instance of `EventArgs`, depending on the event type.
 
 To use these you must provide at least a class to be called and optionally a method. If no method is specified Fluent will assume the method to be called is the same as the name of the Event.
 
@@ -660,11 +656,13 @@ The following documentation is copied from [Doctrine's documentation on lifecycl
 | `$builder->listen()->postFlush(EventListener::class)`               | The postFlush event occurs at the end of a flush operation. |
 | `$builder->listen()->onClear(EventListener::class)`                 | The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities have been removed from the unit of work. |
 
-Please note that **Lifecycle Events are triggered for all entities.** It is the responsibility of the listeners and subscribers to check if the entity is of a type it wants to handle.
+Please note that when using a listener **Lifecycle Events are triggered for all entities.** It is the responsibility of the listeners to check if the entity is of a type it wants to handle.
 
 ### Lifecycle Callback
 
-_Lifecycle Callbacks_ are a **subset** of _Lifecycle Events_ that are defined on an Entity class and are triggered whenever an instance of that Entity experiences a relevant Event.
+_Lifecycle Callbacks_ can be triggered for a **subset** of _Lifecycle Events_. A callback is defined on an Entity class and are triggered when an instance of that Entity experiences a relevant Event.
+
+Like listeners the callback method will receive a specific instance of `EventArgs`, depending on the event type.
 
 You must define the method to be called in the **class** of the Entity the _Lifecycle Callback_ is being mapped to.
 
