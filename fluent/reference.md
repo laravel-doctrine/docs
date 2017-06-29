@@ -617,7 +617,7 @@ the data joined from the related table.
 $builder->joinedTableInheritance()->column('type');
 ```
 
-<a name="lifecycle-callbacks"></a>
+<a name="lifecycle-events-and-callbacks"></a>
 ## Lifecycle events and callbacks
 
 Doctrine allows hooking into its lifecycle via [Events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html). Fluent provides a bridge for these hooks.
@@ -660,7 +660,7 @@ Please note that when using a listener **Lifecycle Events are triggered for all 
 
 ### Lifecycle Callback
 
-_Lifecycle Callbacks_ can be triggered for a **subset** of _Lifecycle Events_. A callback is defined on an Entity class and are triggered when an instance of that Entity experiences a relevant Event.
+_Lifecycle Callbacks_ can be triggered for a **subset** of _Lifecycle Events_. A callback is defined on an Entity class and is triggered when an instance of that Entity experiences a relevant Event.
 
 Like listeners the callback method will receive a specific instance of `EventArgs`, depending on the event type.
 
