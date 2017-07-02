@@ -17,7 +17,7 @@ You can replace existing connection drivers or add custom drivers using the `Lar
 
 ```php
 public function boot(ConnectionManager $connections) {
-    $connections->extend('myDriver', function(Application $app) {
+    $connections->extend('myDriver', function(array $settings, \Illuminate\Contracts\Container\Container $container) {
         return [
             'driver' => 'driver',
             'host'   => ...
