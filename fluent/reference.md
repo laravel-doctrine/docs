@@ -617,15 +617,56 @@ the data joined from the related table.
 $builder->joinedTableInheritance()->column('type');
 ```
 
-<a name="lifecycle-callbacks"></a>
-## Lifecycle callbacks
+<a name="lifecycle-events-and-callbacks"></a>
+## Lifecycle events and callbacks
 
-Doctrine allows configuring specific methods of an entity to be called as listeners of
-_lifecycle events_. This lets you easily hook into specific moments of the Doctrine entity lifecycle.
+Doctrine allows hooking into its lifecycle via [Events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html). Fluent provides a bridge for these hooks.
+
+A list of all Lifecycle Events can be found in the [doctrine documentation](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
+
+### Listening to Lifecycle Events
+
+Listener classes can hook into **any** Lifecycle Events. The event dispatcher will call the given callback method with a specific instance of `EventArgs`, depending on the event type.
+
+To use these you must provide at least a class to be called and optionally a method. If no method is specified Fluent will assume the method to be called is the same as the name of the Event.
+
+`$builder->listen()->onFlush(EventListener::class);` 
+
+will call `TestEventListener@onFlush`
+
+`$builder->listen()->onFlush(EventListener::class, 'methodToCall');` 
+
+will call `TestEventListener@methodToCall`
+
+The following documentation is copied from [Doctrine's documentation on lifecycle events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html#reference-events-lifecycle-events).
+
+| Method                                                        | Description |
+|---------------------------------------------------------------|-------------|
+| `$builder->listen()->preRemove(EventListener::class)`               | The preRemove event occurs for a given entity before the respective EntityManager remove operation for that entity is executed. It is not called for a DQL DELETE statement. |
+| `$builder->listen()->postRemove(EventListener::class)`              | The postRemove event occurs for an entity after the entity has been deleted. It will be invoked after the database delete operations. It is not called for a DQL DELETE statement. |
+| `$builder->listen()->prePersist(EventListener::class)`              | The prePersist event occurs for a given entity before the respective EntityManager persist operation for that entity is executed. It should be noted that this event is only triggered on initial persist of an entity (i.e. it does not trigger on future updates). |
+| `$builder->listen()->postPersist(EventListener::class)`             | The postPersist event occurs for an entity after the entity has been made persistent. It will be invoked after the database insert operations. Generated primary key values are available in the postPersist event. |
+| `$builder->listen()->preUpdate(EventListener::class)`               | The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE statement nor when the computed changeset is empty. |
+| `$builder->listen()->postUpdate(EventListener::class)`              | The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE statement. |
+| `$builder->listen()->postLoad(EventListener::class)`                | The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the database or after the refresh operation has been applied to it. |
+| `$builder->listen()->loadClassMetadata(EventListener::class)`       | The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source. This event is not a lifecycle callback. |
+| `$builder->listen()->onClassMetadataNotFound(EventListener::class)` | Loading class metadata for a particular requested class name failed. Manipulating the given event args instance allows providing fallback metadata even when no actual metadata exists or could be found. |
+| `$builder->listen()->preFlush(EventListener::class)`                | The preFlush event occurs at the very beginning of a flush operation. |
+| `$builder->listen()->onFlush(EventListener::class)`                 | The onFlush event occurs after the change-sets of all managed entities are computed. |
+| `$builder->listen()->postFlush(EventListener::class)`               | The postFlush event occurs at the end of a flush operation. |
+| `$builder->listen()->onClear(EventListener::class)`                 | The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities have been removed from the unit of work. |
+
+Please note that when using a listener **Lifecycle Events are triggered for all entities.** It is the responsibility of the listeners to check if the entity is of a type it wants to handle.
+
+### Lifecycle Callback
+
+_Lifecycle Callbacks_ can be triggered for a **subset** of _Lifecycle Events_. A callback is defined on an Entity class and is triggered when an instance of that Entity experiences a relevant Event.
+
+Like listeners the callback method will receive a specific instance of `EventArgs`, depending on the event type.
+
+You must define the method to be called in the **class** of the Entity the _Lifecycle Callback_ is being mapped to.
 
 Use `$builder->events()` to access the `LaravelDoctrine\Fluent\Builders\LifecycleEvents` object.
-
-The following documentation is copied from [Doctrine's documentation on lifecycle events](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
 
 | Method                                                        | Description |
 |---------------------------------------------------------------|-------------|
@@ -636,12 +677,7 @@ The following documentation is copied from [Doctrine's documentation on lifecycl
 | `$builder->events()->preUpdate(string $method)`               | The preUpdate event occurs before the database update operations to entity data. It is not called for a DQL UPDATE statement nor when the computed changeset is empty. |
 | `$builder->events()->postUpdate(string $method)`              | The postUpdate event occurs after the database update operations to entity data. It is not called for a DQL UPDATE statement. |
 | `$builder->events()->postLoad(string $method)`                | The postLoad event occurs for an entity after the entity has been loaded into the current EntityManager from the database or after the refresh operation has been applied to it. |
-| `$builder->events()->loadClassMetadata(string $method)`       | The loadClassMetadata event occurs after the mapping metadata for a class has been loaded from a mapping source. This event is not a lifecycle callback. |
-| `$builder->events()->onClassMetadataNotFound(string $method)` | Loading class metadata for a particular requested class name failed. Manipulating the given event args instance allows providing fallback metadata even when no actual metadata exists or could be found. This event is not a lifecycle callback. |
-| `$builder->events()->preFlush(string $method)`                | The preFlush event occurs at the very beginning of a flush operation. This event is not a lifecycle callback. |
-| `$builder->events()->onFlush(string $method)`                 | The onFlush event occurs after the change-sets of all managed entities are computed. This event is not a lifecycle callback. |
-| `$builder->events()->postFlush(string $method)`               | The postFlush event occurs at the end of a flush operation. This event is not a lifecycle callback. |
-| `$builder->events()->onClear(string $method)`                 | The onClear event occurs when the EntityManager#clear() operation is invoked, after all references to entities have been removed from the unit of work. This event is not a lifecycle callback. |
+| `$builder->events()->preFlush(string $method)`                | The preFlush event occurs at the very beginning of a flush operation. |
 
 <a name="primary-keys"></a>
 ## Primary keys
