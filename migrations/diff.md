@@ -59,3 +59,5 @@ class Version20150914223731 extends AbstractMigration
     }
 }
 ```
+
+> Note: If you are using Postgres, there is a known issue with doctrine/dbal which causes the diff tool to always detect a change, and add an extra line to the down function.  https://github.com/doctrine/dbal/issues/1110
