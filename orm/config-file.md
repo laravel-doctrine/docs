@@ -177,7 +177,7 @@ To use more than one EM simply create another entry in the `managers` array.
 | **EM Name** | In the sample below the EM we have configured is named `default`. This is the EM that Laravel Doctrine will attempt to use if no argument is provided to `ManagerRegistry`. |
 | **dev** | Whether this EM is in development mode. |
 | **meta** | The metadata driver to use. Built-in options are `annotations|yaml|xml|config|static_php` |
-| **connection** | The connection drier to use. Built-in options are `mysql|oracle|pgsql|sqlite|sqlsrv` |
+| **connection** | The connection driver to use. Built-in options are `mysql|oracle|pgsql|sqlite|sqlsrv` |
 | **namespaces** | (Optional) If your entities are not located in the configured app namespace you can specify a different one here. |
 | **paths** | An paths where the mapping configurations for your entities is located. |
 | **repository** | (Optional) The default repository to use for this EM. |
