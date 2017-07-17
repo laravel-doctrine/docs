@@ -6,6 +6,7 @@
 - [Extensions](#extensions)
 - [Custom Types](#custom-types)
 - [Custom Functions](#custom-functions)
+- [Custom Hydration Modes](#custom-hydration-modes)
 - [Logger](#logger)
 - [Cache](#cache)
 - [Gedmo Extensions](#gedmo)
@@ -119,6 +120,14 @@ return [
     |--------------------------------------------------------------------------
     */
     'custom_string_functions'   => [],
+    /*
+    |--------------------------------------------------------------------------
+    | Register custom hydrators
+    |--------------------------------------------------------------------------
+    */
+    'custom_hydration_modes'     => [
+        // e.g. 'hydrationModeName' => MyHydrator::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | Enable query logging with laravel file logging,
@@ -313,6 +322,25 @@ To add a function simply add it to the correct list using this format:
 |--------------------------------------------------------------------------
 */
 'custom_string_functions'   => [],
+```
+
+### <a name="custom-hydration-modes"></a> Custom Hydration Modes
+
+This option enables you to register your Hydrator classes to use as custom hydration modes. For more information about custom hydration modes see [doctrine documentation](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/dql-doctrine-query-language.html#custom-hydration-modes).
+
+To register custom hydrator, add it to the list in following format:
+
+`'hydrationModeName' => MyHydrator::class`
+
+```php
+/*
+|--------------------------------------------------------------------------
+| Register custom hydrators
+|--------------------------------------------------------------------------
+*/
+'custom_hydration_modes'     => [
+    // e.g. 'hydrationModeName' => MyHydrator::class,
+],
 ```
 
 ### <a name="logger"></a> Logger
