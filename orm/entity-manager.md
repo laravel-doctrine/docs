@@ -78,7 +78,7 @@ if ($article === $article2) {
 
 ### Persisting
 
-By passing the entity through the `persist` method of the EntityManager, that entity becomes MANAGED, which means that its persistence is from now on managed by an EntityManager. As a result the persistent state of such an entity will subsequently be properly synchronised with the database when `EntityManager#flush()` is invoked.
+By passing the entity through the `persist` method of the EntityManager, that entity becomes MANAGED, which means that its persistence is from now on managed by an EntityManager. As a result the persistent state of such an entity will subsequently be properly synchronised with the database when `EntityManager::flush()` is invoked.
 
 > Note: `persist()` doesn't do any `INSERT` queries.
 
