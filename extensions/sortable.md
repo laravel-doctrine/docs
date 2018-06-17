@@ -1,6 +1,6 @@
 # Sortable
 
-**Sortable** behavior will maintain a position field for ordering entities.\
+**Sortable** behavior will maintain a position field for ordering entities.
 
 - Automatic handling of position index
 - Group entity ordering by one or more fields
