@@ -6,7 +6,7 @@ Install this package with composer:
 composer require "laravel-doctrine/extensions:1.0.*"
 ```
 
-This package wraps extensions from [Gedmo](https://github.com/Atlantic18/DoctrineExtensions) and [Berberlei](https://github.com/beberlei/DoctrineExtensions).
+This package wraps extensions from [Gedmo](https://github.com/Atlantic18/DoctrineExtensions) and [Beberlei](https://github.com/beberlei/DoctrineExtensions).
 
 To include Gedmo extensions install them:
 
@@ -28,7 +28,7 @@ To include Beberlei (Query/Type) extensions install them:
 composer require "beberlei/DoctrineExtensions=^1.0"
 ```
 
-And then add the Berberlei extensions service provider in `config/app.php`:
+And then add the Beberlei extensions service provider in `config/app.php`:
 
 
 ```php

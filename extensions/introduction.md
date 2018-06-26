@@ -17,7 +17,7 @@ of Doctrine2 and handle the records being flushed in the behavioral way
 * __Tree__ - this extension automates the tree handling process and adds some tree specific functions on repository. (closure, nestedset or materialized path)
 * __Uploadable__ - provides file upload handling in entity fields
 
-### Query/Type extensions (Berberlei)
+### Query/Type extensions (Beberlei)
 
 A set of extensions to Doctrine 2 that add support for additional queryfunctions available in MySQL and Oracle.
 
