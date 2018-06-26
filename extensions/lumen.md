@@ -31,7 +31,7 @@ To include Beberlei (Query/Type) extensions install them:
 composer require "beberlei/DoctrineExtensions=^1.0"
 ```
 
-And then add the Berberlei extensions service provider in `bootstrap/app.php`:
+And then add the Beberlei extensions service provider in `bootstrap/app.php`:
 
 
 ```php
