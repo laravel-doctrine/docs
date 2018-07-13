@@ -9,9 +9,9 @@ The new migration will be placed in your database/migrations directory. Each mig
 The `--table` and `--create` options may also be used to indicate the name of the table and whether the migration will be creating a new table. These options simply pre-fill the generated migration stub file with the specified table:
 
 ````
-php artisan make:migration --table=users
+php artisan doctrine:migrations:generate --table=users
 
-php artisan make:migration --create=users
+php artisan doctrine:migrations:generate --create=users
 ```
 
 If you would like to specify another output path for the generated migration, you can change the setting in `config/migrations`.
