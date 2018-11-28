@@ -14,7 +14,7 @@ Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\Cache\
 
 ```php
 public function boot(CacheManager $cache) {
-    $cache->extend('memcache' function(Application $app) {
+    $cache->extend('memcache', function(Application $app) {
          $memcache = new \Memcache;
          return new MemcacheCache($memcache);
     });
