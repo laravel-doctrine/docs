@@ -357,9 +357,7 @@ Cache will be used to cache metadata, results and queries.
 |--|--|
 | **cache.default** | The default cache provider to use. |
 | **cache.namespace** |  Will add namespace to the cache key. This is useful if you need extra control over handling key names collisions in your Cache solution.|
-| **cache.second_level** | The Second Level Cache is designed to reduce the amount of necessary database access. It sits between your application and the database to avoid the number of database hits as much as possible.
-When turned on, entities will be first searched in cache and if they are not found, a database query will be fired an then the entity result will be stored in a cache provider.
- When used, READ_ONLY is mostly used. ReadOnly cache can do reads, inserts and deletes, cannot perform updates|
+| **cache.second_level** | The Second Level Cache is designed to reduce the amount of necessary database access. It sits between your application and the database to avoid the number of database hits as much as possible. When turned on, entities will be first searched in cache and if they are not found, a database query will be fired an then the entity result will be stored in a cache provider. When used, READ_ONLY is mostly used. ReadOnly cache can do reads, inserts and deletes, cannot perform updates|
 | **cache.metadata** | Your class metadata can be parsed from a few different sources like YAML, XML, Annotations, etc. Instead of parsing this information on each request we should cache it using one of the cache drivers. |
 | **cache.query** | Cache transformation of a DQL query to its SQL counterpart. |
 | **cache.result** | The result cache can be used to cache the results of your queries so you don't have to query the database or hydrate the data again after the first time. |
