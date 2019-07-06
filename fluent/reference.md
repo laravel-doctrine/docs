@@ -141,7 +141,7 @@ $builder->string('description', function(Field $field){
 });
 ```
 
-Most fields can be customized with the following methods, when it makes sense. Read [the Doctrine Annotations documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#column)
+Most fields can be customized with the following methods, when it makes sense. Read [the Doctrine Annotations documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/annotations-reference.html)
 for an analogue implementation.
 
 | `Field` method | Description |
@@ -167,7 +167,7 @@ for an analogue implementation.
 Doctrine can be configured to use automatically generated values on the database side.
 This is usually used to configure auto-incrementing integers for primary columns.
 
-This is an advanced feature, so [reading the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/basic-mapping.html#identifiers-primary-keys)
+This is an advanced feature, so [reading the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/basic-mapping.html#identifiers-primary-keys)
 is *very recommended*.
 
 You can access the `LaravelDoctrine\Fluent\Builders\GeneratedValue` object only through a `Field` object,
@@ -467,7 +467,7 @@ $builder->belongsTo(Scientist::class, 'mentor')->fetchEager();
 
 Allow some methods to be _even lazier_ than the lazy loading mode.
 
-See [the doctrine Documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/tutorials/extra-lazy-associations.html)
+See [the doctrine Documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/extra-lazy-associations.html)
 for a complete explanation and usage examples.
 
 ```php
@@ -480,7 +480,7 @@ Doctrine can be configured to cascade operations that happen to the current enti
 is useful for encapsulating knowledge of change inside one entity without forcing the user to traverse all modified
 relations.
 
-See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/working-with-associations.html#transitive-persistence-cascade-operations)
+See [the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/working-with-associations.html#transitive-persistence-cascade-operations)
 for a complete usage guide.
 
 In the following examples, assume the `$relation` variable holds the result of calling one of the relation methods
@@ -500,7 +500,7 @@ described above, e.g.: `$relation = $builder->hasMany(Theory::class)`. This is *
 In `one-to-*` and `many-to-many` associations, sometimes removing an entity from a relation means the removed entity
 should be removed from the system. This can be acomplished by the `orphan removal` feature.
 
-See an example in [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/working-with-associations.html#orphan-removal).
+See an example in [the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/working-with-associations.html#orphan-removal).
 
 ```php
 $builder->oneToMany(Theory::class)->orphanRemoval();
@@ -542,7 +542,7 @@ $builder->embed(EmailAddress::class, 'email')->noPrefix();
 A family of entities can be mapped to the database as an inheritance structure. Currently
 Doctrine supports 3 types of inheritance: *Mapped super classes*, *single table* and *joined table inheritance*
 
-For more information on usage and trade-offs, [see the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html).
+For more information on usage and trade-offs, [see the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/inheritance-mapping.html).
 
 <a name="inheritance-mapped-super-class"></a>
 ## Mapped super classes
@@ -646,9 +646,9 @@ $builder->joinedTableInheritance()->column('type');
 <a name="lifecycle-events-and-callbacks"></a>
 ## Lifecycle events and callbacks
 
-Doctrine allows hooking into its lifecycle via [Events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html). Fluent provides a bridge for these hooks.
+Doctrine allows hooking into its lifecycle via [Events](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/events.html). Fluent provides a bridge for these hooks.
 
-A list of all Lifecycle Events can be found in the [doctrine documentation](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-events).
+A list of all Lifecycle Events can be found in the [doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/events.html#lifecycle-events).
 
 ### Listening to Lifecycle Events
 
@@ -664,7 +664,7 @@ will call `TestEventListener@onFlush`
 
 will call `TestEventListener@methodToCall`
 
-The following documentation is copied from [Doctrine's documentation on lifecycle events](https://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/events.html#reference-events-lifecycle-events).
+The following documentation is copied from [Doctrine's documentation on lifecycle events](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/events.html#reference-events-lifecycle-events).
 
 | Method                                                        | Description |
 |---------------------------------------------------------------|-------------|
@@ -826,7 +826,7 @@ If you are mapping custom repositories to a DI Container and resolving them by i
 $builder->entity()->readOnly();
 ```
 
-Mark this entity as *read only*. See [the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html#entity).
+Mark this entity as *read only*. See [the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/annotations-reference.html#entity).
 
 ```php
 $builder->entity()->cacheable(ClassMetadataInfo::CACHE_USAGE_NONSTRICT_READ_WRITE, 'scientists_cache_region');
@@ -834,4 +834,4 @@ $builder->entity()->cacheable(ClassMetadataInfo::CACHE_USAGE_NONSTRICT_READ_WRIT
 
 Mark this entity as cacheable, using the `Second Level Cache` functionality.
 
-Read more about second level cache usage and regions [in the Doctrine documentation](http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/second-level-cache.html).
+Read more about second level cache usage and regions [in the Doctrine documentation](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/second-level-cache.html).

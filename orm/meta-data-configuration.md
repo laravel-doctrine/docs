@@ -21,7 +21,7 @@ The format of the `paths` config value in `doctrine.php` config differs sligthly
 ],
 ```
 
-Check the Doctrine documentation for more information: http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/xml-mapping.html#simplified-xml-driver
+Check the Doctrine documentation for more information: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/xml-mapping.html#simplified-xml-driver
 
 ### YAML
 
@@ -44,7 +44,7 @@ The format of the `paths` config value in `doctrine.php` config differs sligthly
 ],
 ```
 
-Check the Doctrine documentation for more information: http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/yaml-mapping.html#simplified-yaml-driver
+Check the Doctrine documentation for more information: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/yaml-mapping.html#simplified-yaml-driver
 
 ### StaticPhp
 

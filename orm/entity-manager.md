@@ -111,4 +111,4 @@ EntityManager::remove($article);
 EntityManager::flush();
 ```
 
-More information about the entity manager: http://doctrine-orm.readthedocs.org/en/latest/reference/working-with-objects.html
+More information about the entity manager: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/working-with-objects.html

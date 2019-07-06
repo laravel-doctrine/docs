@@ -295,7 +295,7 @@ and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/
 
 Custom types are classes that allow Doctrine to marshal data to/from the data source in a custom format. 
 
-To register a custom type simple add the class to this list. [For more information on custom types refer to the Doctrine documentation.](https://doctrine-orm.readthedocs.org/en/latest/cookbook/custom-mapping-types.html)
+To register a custom type simple add the class to this list. [For more information on custom types refer to the Doctrine documentation.](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/cookbook/custom-mapping-types.html)
 
 ### <a name="custom-functions"></a> Custom Functions
 
