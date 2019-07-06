@@ -46,7 +46,7 @@ class Article
 }
 ```
 
-More about the annotation driver: http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html#
+More about the annotation driver: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/annotations-reference.html#annotations-reference
 
 ### YAML
 
@@ -67,7 +67,7 @@ App\Article:
       type: string
 ```
 
-More about the YAML driver: http://doctrine-orm.readthedocs.org/en/latest/reference/yaml-mapping.html
+More about the YAML driver: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/yaml-mapping.html
 
 ### XML
 
@@ -94,7 +94,7 @@ Another option is to leverage XML mappings. Just like YAML it's better to change
 </doctrine-mapping>
 ```
 
-More information about XML mappings: http://doctrine-orm.readthedocs.org/en/latest/reference/xml-mapping.html
+More information about XML mappings: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/xml-mapping.html
 
 ### Config files
 
@@ -164,4 +164,4 @@ class Article
 }
 ```
 
-More on the StaticPHP driver: http://doctrine-orm.readthedocs.org/en/latest/reference/php-mapping.html
+More on the StaticPHP driver: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/php-mapping.html
