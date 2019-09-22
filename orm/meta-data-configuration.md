@@ -25,9 +25,13 @@ Check the Doctrine documentation for more information: http://doctrine-orm.readt
 
 ### YAML
 
+> **NOTE:** The YAML driver is deprecated and will be removed in Doctrine 3.0.
+
 This package supports Doctrine yml meta data and can be enabled inside the config. 
 
 ### SimplifiedYAML
+ 
+ > **NOTE:** The YAML driver is deprecated and will be removed in Doctrine 3.0.
  
 This package supports simplified Doctrine yml meta data and can be enabled inside the config. 
 

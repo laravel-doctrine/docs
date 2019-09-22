@@ -50,6 +50,8 @@ More about the annotation driver: http://doctrine-orm.readthedocs.org/en/latest/
 
 ### YAML
 
+> **NOTE:** The YAML driver is deprecated and will be removed in Doctrine 3.0.
+
 If you prefer Yaml, you can easily switch the meta driver to `yaml`. It's better to change the meta data paths to something like `config_path('mappings')` instead of adding them all to the `app` folder.
 
 ```yaml
