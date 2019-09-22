@@ -21,6 +21,8 @@ If you are using an **annotation driver**, then add the Gedmo (Behavioral) exten
 LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider::class,
 ```
 
+Also be sure to enable the extensions in the `extensions` section of `config/doctrine.php`.
+
 To include Beberlei (Query/Type) extensions install them:
 
 ```
