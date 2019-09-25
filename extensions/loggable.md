@@ -8,8 +8,40 @@
 - Annotation, Yaml and Xml mapping support for extensions
 
 ### Installation
+* To get Loggable working you'll have needed to follow the following prerequisites;
+    1. Install Laravel doctrine ORM package `composer require laravel-doctrine/orm`
+        1. [Optional] If you intend to use the `fluent` driver for schema then you'll need to install Laravel doctrine fluent `composer require laravel-doctrine/fluent`. Please note that this is __NOT__ required if you're using the annotations method.
+    2. Install Laravel doctrine extension package `composer require laravel-doctrine/extensions`
+    3. Install Gedmo doctrine extension package `composer require gedmo/doctrine-extensions`
+* Add `LaravelDoctrine\Extensions\Loggable\LoggableExtension` to the `extensions` array in `doctrine.php` located within the `config` directory of Laravel.
+```
+'extensions' => [
+    //LaravelDoctrine\ORM\Extensions\TablePrefix\TablePrefixExtension::class,
+    //LaravelDoctrine\Extensions\Timestamps\TimestampableExtension::class,
+    //LaravelDoctrine\Extensions\SoftDeletes\SoftDeleteableExtension::class,
+    //LaravelDoctrine\Extensions\Sluggable\SluggableExtension::class,
+    //LaravelDoctrine\Extensions\Sortable\SortableExtension::class,
+    //LaravelDoctrine\Extensions\Tree\TreeExtension::class,
+    LaravelDoctrine\Extensions\Loggable\LoggableExtension::class,
+    //LaravelDoctrine\Extensions\Blameable\BlameableExtension::class,
+    //LaravelDoctrine\Extensions\IpTraceable\IpTraceableExtension::class,
+    //LaravelDoctrine\Extensions\Translatable\TranslatableExtension::class
+],
+```
 
-Add `LaravelDoctrine\Extensions\Loggable\LoggableExtension` to `doctrine.extensions` config.
+* Add Gedmo loggable listeners into the `events` array in `doctrine.php` located within the `config` directory of Laravel.
+```
+'listeners' => [
+    Gedmo\Loggable\LoggableListener::class,
+],
+```
+
+* Enable Gedmo mappings in the `gedmo` array in `doctrine.php` located within the `config` directory of Laravel.
+```
+'gedmo' => [
+    'all_mappings' => true,
+]
+```
 
 ### Class annotation
 
