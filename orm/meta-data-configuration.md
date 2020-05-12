@@ -60,7 +60,7 @@ Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\MetaDa
 ```php
 public function boot(MetaDataManager $metadata) {
     $metadata->extend('myDriver', function(Application $app) {
-        return FluentDriver();
+        return new FluentDriver();
     });
 }
 ```
