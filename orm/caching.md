@@ -5,7 +5,7 @@ This package supports these caching systems out of the box:
 * redis
 * memcached
 * file
-* acp
+* apc
 * array
 
 ## Extending or Adding Cache Drivers
@@ -13,10 +13,13 @@ This package supports these caching systems out of the box:
 Drivers can be replaced or added using `LaravelDoctrine\ORM\Configuration\Cache\CacheManager`. The return should implement `Doctrine\Common\Cache\Cache` or extend `Doctrine\Common\Cache\CacheProvider`
 
 ```php
-public function boot(CacheManager $cache) {
-    $cache->extend('memcache', function(Application $app) {
-         $memcache = new \Memcache;
-         return new MemcacheCache($memcache);
+public function register()
+{
+    $this->app->resolving(CacheManager::class, function (CacheManager $cache){
+        $cache->extend('memcache', function(array $settings, Application $app) {
+            $memcache = new \Memcache;
+            return new MemcacheCache($memcache);
+        });
     });
 }
 ```
