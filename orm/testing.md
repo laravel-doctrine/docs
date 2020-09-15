@@ -76,7 +76,7 @@ entity(App\User::class, 'admin', 2)->make();
 
 // OR
 
-$factory->of(App\User::clas)->times(2)->make();
+$factory->of(App\User::class)->times(2)->make();
 ```
 
 These methods will return an instance of `Illuminate\Support\Collection` containing your Entities.
