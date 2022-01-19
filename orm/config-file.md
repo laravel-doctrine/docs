@@ -274,7 +274,7 @@ To use the extensions in this sample you must install the extensions package:
 require laravel-doctrine/extensions
 ```
 
-and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)
+and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/current/extensions/installation)
 
 ```php
 'extensions'                => [
@@ -307,7 +307,7 @@ To use the extensions in this sample you must install the extensions package:
 require laravel-doctrine/extensions
 ```
 
-and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)
+and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/current/extensions/installation)
 
 If you include `BeberleiExtensionsServiceProvider` all custom functions will automatically be registered.
  
@@ -399,4 +399,4 @@ To use this option you must first install the extensions package:
 ```
 require laravel-doctrine/extensions
 ```
-and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/1.0/extensions/installation)
+and follow the [installation instructions.](http://www.laraveldoctrine.org/docs/current/extensions/installation)

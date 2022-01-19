@@ -54,7 +54,7 @@ $n->getActionUrl();
 
 ### Publishing notifications on the doctrine channel
 
-It's recommended you read the Laravel docs: https://laravel.com/docs/5.3/notifications
+It's recommended you read the Laravel docs: https://laravel.com/docs/notifications
 
 The Doctrine channel is available as: `LaravelDoctrine\ORM\Notifications\DoctrineChannel::class`
 

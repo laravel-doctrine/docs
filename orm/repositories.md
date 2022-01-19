@@ -23,7 +23,7 @@ This will generate an instance of the `Doctrine\ORM\EntityRepository`, a generic
 
 ## Injecting repositories
 
-You can inject generic repositories by using Laravel's [contextual binding](http://laravel.com/docs/5.1/container#contextual-binding).
+You can inject generic repositories by using Laravel's [contextual binding](https://laravel.com/docs/container#contextual-binding).
 
 ```php
 <?php
