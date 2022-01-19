@@ -161,4 +161,4 @@ class PasswordService
 
 ## Using Authentication
 
-Authentication usage is covered by [Laravel's Documentation.](http://laravel.com/docs/authentication)
+Authentication usage is covered by [Laravel's Documentation.](https://laravel.com/docs/authentication)

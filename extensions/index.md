@@ -2,7 +2,7 @@
     - [Introduction](/docs/{{version}}/extensions/introduction)
     - [Upgrade Guide](/docs/{{version}}/extensions/upgrade)
 - Setup
-    - [Laravel 5](/docs/{{version}}/extensions/installation)
+    - [Laravel](/docs/{{version}}/extensions/installation)
     - [Lumen](/docs/{{version}}/extensions/lumen)
 - Behavioral extensions
     - [Blameable](/docs/{{version}}/extensions/blameable)

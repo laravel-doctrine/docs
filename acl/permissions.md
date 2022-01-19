@@ -33,7 +33,7 @@ $manager->getAllPermissions();
 
 ### Config Permissions
 
-By setting the permissions driver to `config`, no additional `permissions` table will be created, but permissions will be expected to be added inside the config: `acl.permissions.list` The given permissions wil now be stored in the Entity as json.
+By setting the permissions driver to `config`, no additional `permissions` table will be created, but permissions will be expected to be added inside the config: `acl.permissions.list` The given permissions will now be stored in the Entity as json.
 
 ```php
 <?php 

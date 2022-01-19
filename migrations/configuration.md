@@ -25,3 +25,10 @@ __Default__: Database\\Migrations
 Tables which are filtered by Regular Expression. You optionally exclude or limit to certain tables. The default will allow all tables.
 
 __Default__: '/^(?).*$/'
+
+
+## Migration Version Column Length
+
+The length for the version column in the migrations table. By default migrations have are named like `Version20150914223731`. If you are customizing this name then you will need to expand the column length.
+
+__Default__: '14'

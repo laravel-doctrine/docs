@@ -1,18 +1,21 @@
-# Installation in Laravel 5+
+# Installation in Laravel 6+
 
  Laravel  | Laravel Doctrine
 :---------|:----------
- 5.1.*    | 1.0.*
- 5.2.*    | 1.1.*
- 5.3.*    | 1.2.*
- 5.4.*    | 1.3.*
+ 6.*      | ~1.5
+ 7.*      | ~1.6
+ 8.*      | ~1.7
 
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/orm:1.3.*"
+composer require laravel-doctrine/orm doctrine/inflector:"^1.4|^2.0"
 ```
 
+Thanks to Laravel auto package discovery feature, the ServiceProvider and Facades are automatically registered.  
+However they can still be manually registered if required 
+
+## Manual registration
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
@@ -27,10 +30,11 @@ Optionally you can register the EntityManager, Registry and/or Doctrine facade:
 'Doctrine'      => LaravelDoctrine\ORM\Facades\Doctrine::class,
 ```
 
+## Config
 To publish the config use:
 
 ```php
-php artisan vendor:publish --tag="config"
+php artisan vendor:publish --tag="config" --provider="LaravelDoctrine\ORM\DoctrineServiceProvider"
 ```
 
 Available environment variables inside the config are: `APP_DEBUG`, `DOCTRINE_METADATA`, `DB_CONNECTION`, `DOCTRINE_PROXY_AUTOGENERATE`, `DOCTRINE_LOGGER` and `DOCTRINE_CACHE`

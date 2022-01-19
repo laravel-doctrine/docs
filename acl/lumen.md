@@ -1,11 +1,11 @@
-# Installation in Lumen 5+
+# Installation in Lumen 6+
 
 To set up Laravel Doctrine ACL in Lumen, we need some additional steps.
 
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/acl:1.0.*"
+composer require "laravel-doctrine/acl:1.4.*"
 ```
 
 After updating composer, open `bootstrap/app.php` and register the Service Provider after `LaravelDoctrine\ORM\DoctrineServiceProvider::class`

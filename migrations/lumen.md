@@ -1,4 +1,4 @@
-# Installation in Lumen 5+
+# Installation in Lumen 6+
 
 To set up Laravel Doctrine ACL in Lumen, we need some additional steps.
 

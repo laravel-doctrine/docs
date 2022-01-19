@@ -1,9 +1,9 @@
-# Installation in Laravel 5+
+# Installation in Laravel 6+
 
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/extensions:1.0.*"
+composer require "laravel-doctrine/extensions:1.4.*"
 ```
 
 This package wraps extensions from [Gedmo](https://github.com/Atlantic18/DoctrineExtensions) and [Beberlei](https://github.com/beberlei/DoctrineExtensions).
@@ -12,7 +12,7 @@ To include Gedmo extensions install them:
 
 ```
 
-composer require "gedmo/doctrine-extensions=^2.4"
+composer require "gedmo/doctrine-extensions=^3.0"
 ```
 
 If you are using an **annotation driver**, then add the Gedmo (Behavioral) extensions service provider in `config/app.php`:

@@ -1,11 +1,17 @@
-# Installation in Lumen 5+
+# Installation in Lumen 6+
+ 
+ Lumen    | Laravel Doctrine
+:---------|:----------
+ 6.*      | ~1.5
+ 7.*      | ~1.6
+ 8.*      | ~1.7
 
 To set up Laravel Doctrine in Lumen, we need some additional steps.
 
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/orm:1.3.*"
+composer require "laravel-doctrine/orm:1.7.*"
 ```
 
 After updating composer, open `bootstrap/app.php` and register the Service Provider:
