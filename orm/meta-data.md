@@ -48,6 +48,48 @@ class Article
 
 More about the annotation driver: https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/annotations-reference.html#annotations-reference
 
+### Attributes
+
+The attributes driver requires php 8 or above. It searches the entities in the `app` folder, but you can change this to whatever folder (or multiple folders) you like. Attributes means, that you will use attributes to indicate the column mappings.
+
+```php
+<?php
+
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\Table;
+
+#[Entity]
+#[Table(name: "articles")]
+class Article
+{
+    #[Id, Column(type: "integer"), GeneratedValue()]
+    protected $id;
+
+    #[Column(type: "string")]
+    protected $title;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+}
+```
+
+More about the attributes driver: https://www.doctrine-project.org/projects/doctrine-orm/en/2.11/reference/attributes-reference.html
+
 ### YAML
 
 > **NOTE:** The YAML driver is deprecated and will be removed in Doctrine 3.0.
