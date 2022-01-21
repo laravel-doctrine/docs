@@ -40,7 +40,7 @@ php artisan vendor:publish --tag="config" --provider="LaravelDoctrine\ORM\Doctri
 Available environment variables inside the config are: `APP_DEBUG`, `DOCTRINE_METADATA`, `DB_CONNECTION`, `DOCTRINE_PROXY_AUTOGENERATE`, `DOCTRINE_LOGGER` and `DOCTRINE_CACHE`
 
 > Important:
-> By default, Laravel's application skeleton has its `Model` classes in the `app/` folder. With Doctrine, you'll need to
+> By default, Laravel's application skeleton has its `Model` classes in the `app/Models` folder. With Doctrine, you'll need to
 > create a dedicated folder for your `Entities` and point your `config/doctrine.php` `paths` array to it.
 > If you don't, Doctrine will scan your whole `app/` folder for files, which will have a huge impact on performance!
 > 
