@@ -27,7 +27,7 @@ You can inject generic repositories by using Laravel's [contextual binding](http
 
 ```php
 <?php
-namespace App\Research;
+namespace App\Entities\Research;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 
@@ -45,8 +45,8 @@ class Laboratory
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Laboratory;
-use App\Research\Scientist;
+use App\Entities\Research\Laboratory;
+use App\Entities\Research\Scientist;
 use Doctrine\Common\Persistence\ObjectRepository;
 
 class AppServiceProvider
@@ -125,7 +125,7 @@ class DoctrineScientistRepository extends EntityRepository implements ScientistR
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 
 class AppServiceProvider
 {
@@ -174,7 +174,7 @@ class DoctrineScientistRepository implements ScientistRepository
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 
 class AppServiceProvider
 {

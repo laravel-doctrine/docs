@@ -55,6 +55,8 @@ The attributes driver requires php 8 or above. It searches the entities in the `
 ```php
 <?php
 
+namespace App\Entities;
+
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -97,8 +99,8 @@ More about the attributes driver: https://www.doctrine-project.org/projects/doct
 If you prefer Yaml, you can easily switch the meta driver to `yaml`. It's better to change the meta data paths to something like `config_path('mappings')` instead of adding them all to the `app` folder.
 
 ```yaml
-# App.Article.dcm.yml
-App\Article:
+# App.Entities.Article.dcm.yml
+App\Entities\Article:
   type: entity
   table: articles
   id:
@@ -125,7 +127,7 @@ Another option is to leverage XML mappings. Just like YAML it's better to change
       xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
 
-    <entity name="App\Article" table="articles">
+    <entity name="App\Entities\Article" table="articles">
 
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
@@ -159,7 +161,7 @@ The array structure in `config/mappings.php` is almost identical to the YAML one
 ```php
 <?php
 return [
-    'App\Article' => [
+    'App\Entities\Article' => [
         'type'   => 'entity',
         'table'  => 'articles',
         'id'     => [

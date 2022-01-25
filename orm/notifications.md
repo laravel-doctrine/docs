@@ -12,7 +12,7 @@ It might look like this:
 ```php
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Doctrine\ORM\Mapping AS ORM;
 
@@ -22,7 +22,7 @@ use Doctrine\ORM\Mapping AS ORM;
 class Notification extends \LaravelDoctrine\ORM\Notifications\Notification
 {
     /**
-     * @ORM\ManyToOne(targetEntity="App\User")
+     * @ORM\ManyToOne(targetEntity="App\Entities\User")
      */
     protected $user;
 }
@@ -85,7 +85,7 @@ class InvoicePaid extends \Illuminate\Notifications\Notification
      */
     public function toEntity($notifiable)
     {
-        return (new \App\Notification)
+        return (new \App\Entities\Notification)
             ->to($notifiable)
             ->success()
             ->message('Some message')

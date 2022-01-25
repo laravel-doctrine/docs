@@ -86,7 +86,7 @@ return [
 	|
 	*/
 
-	'model' => App\User::class,
+	'model' => App\Entities\User::class,
 
 
 	/*

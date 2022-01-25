@@ -26,7 +26,7 @@ The field under validation must be unique for a given Entity. If the column opti
 public function store(Request $request)
 {
     $this->validate($request, [
-        'username' => 'required|unique:App\User,username',
+        'username' => 'required|unique:App\Entities\User,username',
     ]);
 }
 ```
@@ -71,7 +71,7 @@ The field under validation must exist on a given database table.
 public function update($id, Request $request)
 {
     $this->validate($request, [
-        'username' => 'required|exists:App\User,username',
+        'username' => 'required|exists:App\Entities\User,username',
     ]);
 }
 ```

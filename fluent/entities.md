@@ -22,7 +22,7 @@ Entities must have a _distinct identity_, which we usually refer to as ID. IDs c
 
 ```php
 <?php
-namespace App\Research;
+namespace App\Entities\Research;
 
 /**
  * In doctrine, your Entities don't need to extend or implement anything.
@@ -66,7 +66,7 @@ We'll need to tell doctrine **which object are we mapping** and **how fields of 
 <?php
 namespace App\Mappings;
 
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 use LaravelDoctrine\Fluent\EntityMapping;
 use LaravelDoctrine\Fluent\Fluent;
 
@@ -156,7 +156,7 @@ We'll make this scientist more interesting: lets give it a name.
 
 ```php
 <?php
-namespace App\Research;
+namespace App\Entities\Research;
 
 class Scientist
 {
@@ -195,7 +195,7 @@ Now, lets map these new fields to the database and see how that looks:
 <?php
 namespace App\Mappings;
 
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 use LaravelDoctrine\Fluent\EntityMapping;
 use LaravelDoctrine\Fluent\Fluent;
 
@@ -234,7 +234,7 @@ $ php artisan doctrine:schema:update
 
 ```php
 <?php
-$al = new App\Research\Scientist('Albert', 'Einstein');
+$al = new App\Entities\Research\Scientist('Albert', 'Einstein');
 EntityManager::persist($al);
 EntityManager::flush();
 ```
