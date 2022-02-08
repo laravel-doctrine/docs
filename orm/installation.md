@@ -5,11 +5,12 @@
  6.*      | ~1.5
  7.*      | ~1.6
  8.*      | ~1.7
+ 9.*      | ~1.8
 
 Install this package with composer:
 
 ```
-composer require laravel-doctrine/orm doctrine/inflector:"^1.4|^2.0"
+composer require laravel-doctrine/orm
 ```
 
 Thanks to Laravel auto package discovery feature, the ServiceProvider and Facades are automatically registered.  
