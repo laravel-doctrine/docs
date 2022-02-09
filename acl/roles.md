@@ -3,12 +3,12 @@
 ### Role Entity
 
 To add Roles to your application, you'll have to create a `Role` entity. This entity should implement `LaravelDoctrine\ACL\Contracts\Role`.
-Next you should change the class name the `acl.roles.entity` config to your class, by default this is set to `App\Role`.
+Next you should change the class name the `acl.roles.entity` config to your class, by default this is set to `App\Entities\Role`.
 
 ```
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
 use LaravelDoctrine\ACL\Contracts\Role as RoleContract;

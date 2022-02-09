@@ -12,7 +12,7 @@ It might look like this:
 ```php
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Doctrine\ORM\Mapping AS ORM;
 
@@ -22,7 +22,7 @@ use Doctrine\ORM\Mapping AS ORM;
 class Notification extends \LaravelDoctrine\ORM\Notifications\Notification
 {
     /**
-     * @ORM\ManyToOne(targetEntity="App\User")
+     * @ORM\ManyToOne(targetEntity="App\Entities\User")
      */
     protected $user;
 }
@@ -54,7 +54,7 @@ $n->getActionUrl();
 
 ### Publishing notifications on the doctrine channel
 
-It's recommended you read the Laravel docs: https://laravel.com/docs/5.3/notifications
+It's recommended you read the Laravel docs: https://laravel.com/docs/notifications
 
 The Doctrine channel is available as: `LaravelDoctrine\ORM\Notifications\DoctrineChannel::class`
 
@@ -85,7 +85,7 @@ class InvoicePaid extends \Illuminate\Notifications\Notification
      */
     public function toEntity($notifiable)
     {
-        return (new \App\Notification)
+        return (new \App\Entities\Notification)
             ->to($notifiable)
             ->success()
             ->message('Some message')

@@ -2,7 +2,7 @@
     - [Introduction](/docs/{{version}}/acl/introduction)
     - [Upgrade Guide](/docs/{{version}}/acl/upgrade)
 - Setup
-    - [Laravel 5](/docs/{{version}}/acl/installation)
+    - [Laravel](/docs/{{version}}/acl/installation)
     - [Lumen](/docs/{{version}}/acl/lumen)
 - Features
     - [Roles](/docs/{{version}}/acl/roles)

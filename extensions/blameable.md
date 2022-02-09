@@ -33,6 +33,8 @@ Column is a string field:
 ``` php
 <?php
 
+namespace App\Entities;
+
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -89,6 +91,8 @@ Column is an association:
 ```php
 <?php
 
+namespace App\Entities;
+
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -99,7 +103,7 @@ class Article
 {
     /**
      * @Gedmo\Blameable(on="create")
-     * @ORM\ManyToOne(targetEntity="App\User")
+     * @ORM\ManyToOne(targetEntity="App\Entities\User")
      * @ORM\JoinColumn(name="created_by", referencedColumnName="id")
      */
     protected $createdBy;

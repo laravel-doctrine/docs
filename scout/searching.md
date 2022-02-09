@@ -8,4 +8,4 @@ You should then chain the `get` method onto the search query to retrieve the hyd
 $posts = $repository->search('Star Trek')->get();
 ```
 
-You can find the other usages in the Laravel Scout docs: https://laravel.com/docs/5.3/scout
+You can find the other usages in the Laravel Scout docs: https://laravel.com/docs/scout

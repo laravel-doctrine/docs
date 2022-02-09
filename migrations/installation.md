@@ -1,4 +1,4 @@
-# Installation in Laravel 5+
+# Installation in Laravel 6+
 
 Install this package with composer:
 
@@ -15,5 +15,5 @@ LaravelDoctrine\Migrations\MigrationsServiceProvider::class,
 To publish the config use:
 
 ```php
-php artisan vendor:publish --tag="config"
+php artisan vendor:publish --tag="config" --provider="LaravelDoctrine\Migrations\MigrationsServiceProvider"
 ```

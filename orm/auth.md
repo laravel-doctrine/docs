@@ -86,7 +86,7 @@ return [
 	|
 	*/
 
-	'model' => App\User::class,
+	'model' => App\Entities\User::class,
 
 
 	/*
@@ -161,4 +161,4 @@ class PasswordService
 
 ## Using Authentication
 
-Authentication usage is covered by [Laravel's Documentation.](http://laravel.com/docs/5.1/authentication)
+Authentication usage is covered by [Laravel's Documentation.](https://laravel.com/docs/authentication)

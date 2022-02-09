@@ -8,4 +8,4 @@ First off you have to replace Laravel's `PasswordResetServiceProvider` in `confi
 To get started, verify that your `User` model implements the `Illuminate\Contracts\Auth\CanResetPassword` contract. You can use the `Illuminate\Auth\Passwords\CanResetPassword` 
 trait, which provides the methods the interface requires. The trait assumes your `email` property is called `email`.
 
-Read more about the usage in the [Laravel documentation](http://laravel.com/docs/5.1/authentication#resetting-passwords)
+Read more about the usage in the [Laravel documentation](https://laravel.com/docs/passwords)

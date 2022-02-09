@@ -30,7 +30,7 @@ If migration is successful the file `doctrine.generated.php` is created in the `
 
 ## Writing A Template for a Configuration
 
-To create a new configuration file [blade templates](http://laravel.com/docs/master/blade) are used to create php code that is then rendered to a string and written to a file. Templates take in the original configuration as an array and output sections of the new configuration with the transformed values.
+To create a new configuration file [blade templates](https://laravel.com/docs/master/blade) are used to create php code that is then rendered to a string and written to a file. Templates take in the original configuration as an array and output sections of the new configuration with the transformed values.
 
 To create a template follow the following steps:
 

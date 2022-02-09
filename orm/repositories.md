@@ -23,11 +23,11 @@ This will generate an instance of the `Doctrine\ORM\EntityRepository`, a generic
 
 ## Injecting repositories
 
-You can inject generic repositories by using Laravel's [contextual binding](http://laravel.com/docs/5.1/container#contextual-binding).
+You can inject generic repositories by using Laravel's [contextual binding](https://laravel.com/docs/container#contextual-binding).
 
 ```php
 <?php
-namespace App\Research;
+namespace App\Entities\Research;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 
@@ -45,8 +45,8 @@ class Laboratory
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Laboratory;
-use App\Research\Scientist;
+use App\Entities\Research\Laboratory;
+use App\Entities\Research\Scientist;
 use Doctrine\Common\Persistence\ObjectRepository;
 
 class AppServiceProvider
@@ -125,7 +125,7 @@ class DoctrineScientistRepository extends EntityRepository implements ScientistR
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 
 class AppServiceProvider
 {
@@ -174,7 +174,7 @@ class DoctrineScientistRepository implements ScientistRepository
 }
 
 // Then, in one of your ServiceProviders
-use App\Research\Scientist;
+use App\Entities\Research\Scientist;
 
 class AppServiceProvider
 {

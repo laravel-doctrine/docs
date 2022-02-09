@@ -3,7 +3,7 @@
     - [Upgrade Guide](/docs/{{version}}/orm/upgrade)
     - [Contribution Guide](/docs/{{version}}/orm/contributions)
 - Setup
-    - [Laravel 5](/docs/{{version}}/orm/installation)
+    - [Laravel](/docs/{{version}}/orm/installation)
     - [Lumen](/docs/{{version}}/orm/lumen)
 - The Basics
     - [Entities](/docs/{{version}}/orm/entities)

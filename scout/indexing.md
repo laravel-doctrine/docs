@@ -51,7 +51,7 @@ you may already have database records you need to import into your search driver
 Scout provides an `import` Artisan command that you may use to import all of your existing records into your search indexes:
 
 ```
-php artisan doctrine:scout:import "App\Post"
+php artisan doctrine:scout:import "App\Entities\Post"
 ```
 
 ### Adding entities
@@ -60,7 +60,7 @@ Once you have activated the `LaravelDoctrine\Scout\SearchableExtension` extensio
 all you need to do is `persist` and `flush` an entity instance and it will automatically be added to your search index. 
 
 ```php
-$post = new App\Post;
+$post = new App\Entities\Post;
 
 // ...
 

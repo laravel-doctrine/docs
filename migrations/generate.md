@@ -22,17 +22,17 @@ The command generates blank migration class in `database/migrations` with latest
 <?php
 namespace Database\Migrations;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
+use Doctrine\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
 
 class Version20150915130401 extends AbstractMigration
 {
- public function up(Schema $schema)
+ public function up(Schema $schema): void
  {
 
  }
 
- public function down(Schema $schema)
+ public function down(Schema $schema): void
  {
 
  }
@@ -46,7 +46,7 @@ class Version20150915130401 extends AbstractMigration
 For example:
 
 ```php
-public function up(Schema $schema)
+public function up(Schema $schema): void
 {
     $this->addSql('CREATE TABLE addresses (id INT NOT NULL, street VARCHAR(255) NOT NULL, PRIMARY KEY(id)) ENGINE = InnoDB');
 }
@@ -61,7 +61,7 @@ Alternatively you can use a Laravel-like Schema Builder. The previous example wi
  use LaravelDoctrine\Migrations\Schema\Table;
  use LaravelDoctrine\Migrations\Schema\Builder;
  
- public function up(Schema $schema)
+ public function up(Schema $schema): void
  {
      (new Builder($schema))->create('addresses', function(Table $table) {
         $table->increments('id');

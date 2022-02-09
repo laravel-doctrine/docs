@@ -20,7 +20,7 @@
 To include Gedmo extensions install them:
 
 ```
-composer require "gedmo/doctrine-extensions=^2.4"
+composer require "gedmo/doctrine-extensions=^3.0"
 ```
 
 #### In Laravel Doctrine
@@ -28,7 +28,7 @@ composer require "gedmo/doctrine-extensions=^2.4"
 Require the extensions package in composer:
 
 ```
-composer require "laravel-doctrine/extensions:1.0.*"
+composer require "laravel-doctrine/extensions:1.4.*"
 ```
 
 Add the Gedmo (Behavioral) extensions service provider in `config/app.php`:

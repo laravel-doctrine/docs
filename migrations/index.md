@@ -2,7 +2,7 @@
     - [Introduction](/docs/{{version}}/migrations/introduction)
     - [Upgrade Guide](/docs/{{version}}/migrations/upgrade)
 - Setup
-    - [Laravel 5](/docs/{{version}}/migrations/installation)
+    - [Laravel](/docs/{{version}}/migrations/installation)
     - [Lumen](/docs/{{version}}/migrations/lumen)
     - [Configuration](/docs/{{version}}/migrations/configuration)
 - Console

@@ -1,6 +1,6 @@
 # Introduction
 
-#### A drop-in Doctrine ORM 2 implementation for Laravel 5+
+#### A drop-in Doctrine ORM 2 implementation for Laravel 6+
 
 Doctrine 2 is an object-relational mapper (ORM) for PHP that provides transparent persistence for PHP objects. 
 It uses the Data Mapper pattern at the heart, aiming for a complete separation of 

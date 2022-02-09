@@ -8,7 +8,7 @@ Out of the box the database connections configured in `database.php` config are 
 * sqlsrv 
 * oci8
 
-Please note that read/write connections are supported as well. Check out [laravel documentation](https://laravel.com/docs/5.4/database#read-and-write-connections) for more details.
+Please note that read/write connections are supported as well. Check out [laravel documentation](https://laravel.com/docs/database#read-and-write-connections) for more details.
 
 By simply changing the `DB_CONNECTION` env variable you swap the database connection for Doctrine as well.
 The additional settings per connection are applied by default.

@@ -66,10 +66,10 @@ In the example underneath, the Article entity is fetched from the entity manager
 `$article` and `$article1` will be identical, eventhough we haven't persisted the changes to `$article` to the database yet.
 
 ```php
-$article = EntityManager::find('App\Article', 1);
+$article = EntityManager::find('App\Entities\Article', 1);
 $article->setTitle('Different title');
 
-$article2 = EntityManager::find('App\Article', 1);
+$article2 = EntityManager::find('App\Entities\Article', 1);
 
 if ($article === $article2) {
     echo "Yes we are the same!";

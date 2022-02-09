@@ -1,4 +1,4 @@
-# Installation in Laravel 5+
+# Installation in Laravel 6+
 
 The Fluent driver can be easily integrated to a Laravel project that already uses Doctrine
 through the [laravel-doctrine/orm](https://github.com/laravel-doctrine/orm) package.
