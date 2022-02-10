@@ -3,7 +3,7 @@
 Install this package with composer:
 
 ```
-composer require "laravel-doctrine/acl:1.4.*"
+composer require laravel-doctrine/acl
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
