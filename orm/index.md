@@ -18,6 +18,7 @@
     - [Extending Connections](/docs/{{version}}/orm/connections)
     - [Extending MetaData](/docs/{{version}}/orm/meta-data-configuration)
     - [Extending Caching](/docs/{{version}}/orm/caching)
+    - [Troubleshooting](/docs/{{version}}/orm/troubleshooting)
 - Services
     - [Authentication](/docs/{{version}}/orm/auth)
     - [Password resets](/docs/{{version}}/orm/passwords)
