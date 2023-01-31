@@ -30,7 +30,7 @@ return [
     | paths setting to the appropriate path and replace App namespace
     | by your own namespace.
     |
-    | Available meta drivers: annotations|yaml|xml|config|static_php
+    | Available meta drivers: fluent|annotations|yaml|simplified_yaml|xml|simplified_xml|config|static_php|php
     |
     | Available connections: mysql|oracle|pgsql|sqlite|sqlsrv
     | (Connections can be configured in the database config)
@@ -197,7 +197,7 @@ To use more than one EM simply create another entry in the `managers` array.
 |:-----------|------------|
 | **EM Name** | In the sample below the EM we have configured is named `default`. This is the EM that Laravel Doctrine will attempt to use if no argument is provided to `ManagerRegistry`. |
 | **dev** | Whether this EM is in development mode. |
-| **meta** | The metadata driver to use. Built-in options are `annotations|yaml|xml|config|static_php` |
+| **meta** | The metadata driver to use. Built-in options are `fluent|annotations|yaml|simplified_yaml|xml|simplified_xml|config|static_php|php` |
 | **connection** | The connection driver to use. Built-in options are `mysql|oracle|pgsql|sqlite|sqlsrv` |
 | **namespaces** | (Optional) If your entities are not located in the configured app namespace you can specify a different one here. |
 | **paths** | An paths where the mapping configurations for your entities is located. |
